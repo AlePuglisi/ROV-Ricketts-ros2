@@ -5,7 +5,7 @@ I started this project to learn how to set up an underwater world simulation wit
 Gazebo Classic has reached its end of life, and it is time to learn how to use Gazebo sim. <br/>
 
 ### Final (long-term) Objective
-Thanks to the huge amount of available ROV, Environments, and Creatures models gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models),I want to: 
+Thanks to the huge amount of available ROV, Environments, and Creatures models gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models), I want to: 
 - Create a URDF Model of MBARI's  [ROV Doc Ricketts](https://www.mbari.org/technology/rov-doc-ricketts/)
    - Model each thruster as an independent joint
    - Model and Integrate the actuated ROV's Manipulator (with all joints)
@@ -13,7 +13,7 @@ Thanks to the huge amount of available ROV, Environments, and Creatures models g
 - Learn to correctly set up Gazebo sim plugins to simulate thrusters, buoyancy, and Fluidodinamic force
 - Add light sources, cameras, and other exteroceptive/proprioceptive sensors to the Robot Model. 
 - Create a custom sdf world file, with deep-sea environments from MBARI's 3D floor reconstruction 
-- Add deep sea creatures as [Gazebo Actors](https://gazebosim.org/docs/latest/actors/), to make this world even more alive.
+- Add deep sea creatures as [Gazebo Actors](https://gazebosim.org/docs/latest/actors/), to make this world even more alive. <br/>
   This is possible thanks to [Photogrammetry Techniques](https://www.mbari.org/wp-content/uploads/Kaiser_Nicole.pdf) used by MBARI.
 - Implement high and low-level ROS nodes to control and teleoperate the ROV motion (exploiting the 7 thrusters) 
 - Implement high and low-level ROS nodes to control and teleoperate the ROV Arm (including Gripper operations)
