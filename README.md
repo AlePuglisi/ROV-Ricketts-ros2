@@ -38,37 +38,37 @@ Feel free to [Pull Requests](https://docs.github.com/en/pull-requests/collaborat
 
 ## Step 1. Set up The Simulation
 
-## Step 1.1. Create ROV Ricketts URDF from Sketchfab Model
+## 1.1. Create ROV Ricketts URDF from Sketchfab Model
 
-## Step 1.2. Set up empty underwater World Gazebo Harmonic Simulation
+## 1.2. Set up empty underwater World Gazebo Harmonic Simulation
 
-## Step 1.3. Include and Tune Thrusters, Buoyancy, and other fluid dynamic Plugins in the ROV Model 
+## 1.3. Tune Thrusters, Buoyancy, and other fluid dynamic Plugins for the ROV Model 
 
-## Step 1.4. Spwan and Move ROV Ricketts in the empty world
+## 1.4. Spwan and Move ROV Ricketts in the empty world
 
-## Step 1.5. Include 
+## 1.5. Include 
 
 ## Step 2. Create Gazebo Deep Sea World from Sketchfab Models
 
-## Step 2.1. Import and Position desired environmental deep-sea elements
+## 2.1. Import and Position desired environmental deep-sea elements
 
-## Step 2.2. Import deep-sea creatures meshes
+## 2.2. Import deep-sea creatures meshes
 
-## Step 2.3. Define "Actor" Behaviours for animals
+## 2.3. Define "Actor" Behaviours for animals
 
 ## Step 3. Set Up Robot Teleoperation
 
-## Step 3.1. Map Desired motion in free space to thruster commands
+## 3.1. Map Desired motion in free space to thruster commands
 
-## Step 3.2. Implement Teleoperation Node
+## 3.2. Implement Teleoperation Node
 
-## Step 3.3. Map Joystick or CLI commands to correct thrusters command
+## 3.3. Map Joystick or CLI commands to correct thrusters command
 
 ## Step 4. Set Up Arm Teleoperation 
 
-## Step 4.1. Rely on the Teleoperation Node to include new arm-related commands
+## 4.1. Rely on the Teleoperation Node to include new arm-related commands
 
-## Step 4.2. Use Movit2 or ros2_control for Joint Control of the Arm 
+## 4.2. Use Movit2 or ros2_control for Joint Control of the Arm 
 
 ## Step 5 and so on ... 
 
