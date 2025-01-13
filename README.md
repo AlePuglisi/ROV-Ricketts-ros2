@@ -20,9 +20,9 @@ Thanks to the huge amount of available ROV, Environments, and Creatures models g
 - Implement control on Pan-Tilt Camera motion
 - Set up needed TFs, sensors, topics, and odometry to Enable Mapping with SLAM
 - Set up Autonomous Navigation Features
-- Implement high-level algorithms for Visual Tracking of deep water animals
+- Implement high-level algorithms for Visual Tracking of deep water animals <br/>
   (Due to Gazebo's Limitations in rendering camera images, this may require moving to IsaacSim)
-- Implement high-level algorithms for the Visual Servo Control of the ROV Robotic Arm.
+- Implement high-level algorithms for Visual Servo Control of the ROV Robotic Arm.
   
 ... This is a lot just for a single person, create an issue for any suggestion, idea, or review. <br/>
 Feel free to [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to contribute to this project.
