@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="thruster_macro" params="name *origin">
+    <joint name="${name}_thruster" type="revolute">
+      <xacro:insert_block name="origin"/>
+      <parent link="base_link" />
+      <child link="${name}" />
+      <axis xyz="0 0 1" />
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="20"
+        velocity="10" />
+      <dynamics damping="0.1" friction="0.4"/>
+    </joint>
+
+    <link
+      name="${name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.12821" />
+        <inertia
+          ixx="3.7005E-05"
+          ixy="-1.9987E-08"
+          ixz="-3.8346E-12"
+          iyy="2.9934E-05"
+          iyz="2.5988E-11"
+          izz="4.8164E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/thruster.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.5 0.1 0.1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/thruster.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+  
+  </xacro:macro>
+</robot>
