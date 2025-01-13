@@ -12,7 +12,7 @@ Thanks to the huge amount of available ROV, Environments, and Creatures models g
 - Define an approximated fluid dynamic model of the ROV, for simulation
 - Learn to correctly set up Gazebo sim plugins to simulate thrusters, buoyancy, and Fluidodinamic force
 - Add light sources, cameras, and other exteroceptive/proprioceptive sensors to the Robot Model. 
-- Create a custom sdf world file, with deep-sea environments from MBARI's 3D floor reconstruction 
+- Create a custom sdf world file, with deep-sea environments from MBARI's 3D sea floor reconstruction 
 - Add deep sea creatures as [Gazebo Actors](https://gazebosim.org/docs/latest/actors/), to make this world even more alive. <br/>
   This is possible thanks to [Photogrammetry Techniques](https://www.mbari.org/wp-content/uploads/Kaiser_Nicole.pdf) used by MBARI.
 - Implement high and low-level ROS nodes to control and teleoperate the ROV motion (exploiting the 7 thrusters) 
