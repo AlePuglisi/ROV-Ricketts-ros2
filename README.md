@@ -14,7 +14,8 @@ Due to some limitations of Gazebo, soon, I want to explore other robotics simula
 Thanks to the huge amount of available ROV, Environments, and Creatures models gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models), I want to: 
 - Create a URDF Model of MBARI's  [ROV Doc Ricketts](https://www.mbari.org/technology/rov-doc-ricketts/)
    - Model each thruster as an independent joint
-   - Model and Integrate the actuated ROV's Manipulator (with all joints)
+   - Model and Integrate the actuated ROV's Manipulator (with all joints) <br/>
+     (Even If currently Ricketts has 2 arms for advanced manipulation tasks, I will consider this only in the future) 
 - Define an approximated fluid dynamic model of the ROV, for simulation
 - Learn to correctly set up Gazebo sim plugins to simulate thrusters, buoyancy, and Fluidodinamic force
 - Create a custom sdf world file, with deep-sea environments from MBARI's 3D sea floor reconstruction 
