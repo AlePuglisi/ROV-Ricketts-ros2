@@ -1,4 +1,5 @@
 # ROV-Ricketts-ros2
+**Unofficial MBARI's ROV Project** <br/>
 Underwater World Simulation | ROV | ROS2 Jazzy | Gazebo Harmonic | 
 
 I started this project to learn how to set up an underwater world simulation with ROS2 and Gazebo. <br/>
