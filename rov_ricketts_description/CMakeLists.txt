@@ -16,7 +16,7 @@ find_package(xacro REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY launch meshes urdf textures #config
+  DIRECTORY launch meshes urdf textures config
   DESTINATION share/${PROJECT_NAME}
 )
 

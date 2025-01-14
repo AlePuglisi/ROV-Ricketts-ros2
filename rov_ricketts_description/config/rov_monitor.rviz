@@ -6,10 +6,11 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
         - /RobotModel1
         - /TF1
       Splitter Ratio: 0.5
-    Tree Height: 1085
+    Tree Height: 839
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -34,7 +35,7 @@ Visualization Manager:
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz_default_plugins/Grid
-      Color: 160; 160; 164
+      Color: 26; 95; 180
       Enabled: true
       Line Style:
         Line Width: 0.029999999329447746
@@ -49,7 +50,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.699999988079071
+    - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
       Description File: ""
@@ -66,132 +67,51 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        LF_coxa:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_end_effector:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_femur:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_foot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_limb_root:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_tibia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_coxa:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_end_effector:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_femur:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_foot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_limb_root:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LH_tibia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        RF_coxa:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_end_effector:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_femur:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_foot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_limb_root:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_tibia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_coxa:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_end_effector:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_femur:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_foot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_limb_root:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RH_tibia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        front_dx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_sx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_dx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_sx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        up_front_dx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        up_front_sx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        up_rear:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Mass Properties:
         Inertia: false
         Mass: false
@@ -205,55 +125,23 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        LF_coxa:
-          Value: true
-        LF_end_effector:
-          Value: true
-        LF_femur:
-          Value: true
-        LF_foot:
-          Value: true
-        LF_limb_root:
-          Value: true
-        LF_tibia:
-          Value: true
-        LH_coxa:
-          Value: true
-        LH_end_effector:
-          Value: true
-        LH_femur:
-          Value: true
-        LH_foot:
-          Value: true
-        LH_limb_root:
-          Value: true
-        LH_tibia:
-          Value: true
-        RF_coxa:
-          Value: true
-        RF_end_effector:
-          Value: true
-        RF_femur:
-          Value: true
-        RF_foot:
-          Value: true
-        RF_limb_root:
-          Value: true
-        RF_tibia:
-          Value: true
-        RH_coxa:
-          Value: true
-        RH_end_effector:
-          Value: true
-        RH_femur:
-          Value: true
-        RH_foot:
-          Value: true
-        RH_limb_root:
-          Value: true
-        RH_tibia:
-          Value: true
         base_link:
+          Value: true
+        front_dx:
+          Value: true
+        front_sx:
+          Value: true
+        rear_dx:
+          Value: true
+        rear_sx:
+          Value: true
+        up_front_dx:
+          Value: true
+        up_front_sx:
+          Value: true
+        up_rear:
+          Value: true
+        world:
           Value: true
       Marker Scale: 0.5
       Name: TF
@@ -261,40 +149,27 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          LF_limb_root:
-            LF_coxa:
-              LF_femur:
-                LF_tibia:
-                  LF_end_effector:
-                    LF_foot:
-                      {}
-          LH_limb_root:
-            LH_coxa:
-              LH_femur:
-                LH_tibia:
-                  LH_end_effector:
-                    LH_foot:
-                      {}
-          RF_limb_root:
-            RF_coxa:
-              RF_femur:
-                RF_tibia:
-                  RF_end_effector:
-                    RF_foot:
-                      {}
-          RH_limb_root:
-            RH_coxa:
-              RH_femur:
-                RH_tibia:
-                  RH_end_effector:
-                    RH_foot:
-                      {}
+        world:
+          base_link:
+            front_dx:
+              {}
+            front_sx:
+              {}
+            rear_dx:
+              {}
+            rear_sx:
+              {}
+            up_front_dx:
+              {}
+            up_front_sx:
+              {}
+            up_rear:
+              {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
+    Background Color: 153; 193; 241
     Fixed Frame: base_link
     Frame Rate: 30
   Name: root
@@ -338,33 +213,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.9201453924179077
+      Distance: 6.227044105529785
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.03444996103644371
-        Y: 0.04662580415606499
-        Z: -0.10934360325336456
+        X: -3.2697856426239014
+        Y: -0.02105172537267208
+        Z: -0.1975322961807251
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5253980159759521
+      Pitch: 0.27039834856987
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.0753958225250244
+      Yaw: 6.138575077056885
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1376
+  Height: 1136
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000004c6fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001ff00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b000004c6000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000004c6fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003b000004c6000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000a000000003efc0100000002fb0000000800540069006d0065010000000000000a000000025300fffffffb0000000800540069006d006501000000000000045000000000000000000000078f000004c600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000003d2fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001ff00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000003d2000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003d2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000003d2000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073a0000003efc0100000002fb0000000800540069006d006501000000000000073a000002fb00fffffffb0000000800540069006d00650100000000000004500000000000000000000004c9000003d200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -373,6 +248,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 2560
-  X: 0
-  Y: 441
+  Width: 1850
+  X: 70
+  Y: 27

@@ -32,7 +32,7 @@
           filename="file://$(find rov_ricketts_description)/meshes/body.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="">
-        <color rgba="0.2 0.2 0.03 1" />
+        <color rgba="1 0.95 0.5 1" />
       </material>
     </visual>
     <collision>

@@ -3,11 +3,32 @@
   <xacro:include filename="base.xacro" />
   <xacro:include filename="thrusters.xacro" />
   
-  <!-- Use macro to define base and thrusters -->
+  <!-- Use macro to define Base and Thrusters -->
   <link name="world"/>
-
+  <!-- Base -->
   <xacro:base_macro/>
-  <xacro:thruster_macro name="front_dx">
+  <!-- Front Thrusters -->
+  <xacro:thruster_macro name="front_sx">
              <origin xyz="-0.547848 0.4574 0.120838" rpy="${pi/4} ${pi/2} 0"/>
+  </xacro:thruster_macro>
+  <xacro:thruster_macro name="front_dx">
+             <origin xyz="-0.547848 -0.4574 0.120838" rpy="${-pi/4} ${pi/2} 0"/>
+  </xacro:thruster_macro>
+  <!-- Back Thrusters -->
+  <xacro:thruster_macro name="rear_dx">
+             <origin xyz="-3.10256  -0.584898 0.121177" rpy="${-pi/2 -pi/4} ${pi/2} 0"/>
+  </xacro:thruster_macro>
+  <xacro:thruster_macro name="rear_sx">
+             <origin xyz="-3.10256   0.584898 0.121177" rpy="${pi/2 + pi/4} ${pi/2} 0"/>
+  </xacro:thruster_macro>
+   <!-- Up Thrusters --> 
+  <xacro:thruster_macro name="up_rear">
+             <origin xyz="-3.10346   -0.000003 0.787413" rpy="0 0 0"/>
+  </xacro:thruster_macro>
+  <xacro:thruster_macro name="up_front_sx">
+             <origin xyz="-1.23346   0.652772  0.814842" rpy="${15/180 * pi} 0 0"/>
+  </xacro:thruster_macro>
+  <xacro:thruster_macro name="up_front_dx">
+             <origin xyz="-1.23346   -0.652772 0.814842" rpy="${-15/180 * pi} 0 0"/>
   </xacro:thruster_macro>
 </robot>
