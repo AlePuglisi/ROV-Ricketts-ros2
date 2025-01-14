@@ -31,13 +31,19 @@ Thanks to the huge amount of available models of ROV, Environments, and Creature
   (Due to Gazebo's Limitations in rendering camera images, this may require moving to IsaacSim)
 - Implement high-level algorithms for Visual Servo Control of the ROV Robotic Arm.
 - ...
-  
+
 ... This is a lot just for a single person, :raised_hand_with_fingers_splayed: a big high five to anyone opening an issue for suggestions, ideas, or reviews. <br/>
 Feel free to [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to contribute to this project.
+This emoji :point_right: Indicate the current step in development. 
+
+> [!TIP]
+> The following steps can be useful for anyone who wants to create a Robotic Simulation from the robot mesh! <br/>
+> Here world and robot plugins will be underwater specific, but the high-level concepts remain the same even for a ground vehicle. 
 
 ## Step 0. Install and Set up ROS2 + Used ROS Packages 
+... WIP ... 
 
-## Step 1. Set up The Simulation
+## :point_right: Step 1. Set up The Simulation
 
 ## 1.1. Create ROV Ricketts URDF from Sketchfab Model
 
