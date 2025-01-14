@@ -32,7 +32,7 @@ Thanks to the huge amount of available ROV, Environments, and Creatures models g
 - Implement high-level algorithms for Visual Servo Control of the ROV Robotic Arm.
 - ...
   
-... This is a lot just for a sEnvironmentingle person, :raised_hand_with_fingers_splayed: a Big high five to anyone who opens an issue for any suggestion, idea, or review. <br/>
+... This is a lot just for a sEnvironmentingle person, :raised_hand_with_fingers_splayed: a big high five to anyone opening an issue for suggestions, ideas, or reviews. <br/>
 Feel free to [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to contribute to this project.
 
 ## Step 0. Install and Set up ROS2 + Used ROS Packages 
