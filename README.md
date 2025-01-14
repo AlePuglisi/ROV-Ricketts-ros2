@@ -11,7 +11,7 @@ Gazebo Classic has reached its end of life, and it is time to learn how to use G
 Due to some limitations of Gazebo, soon, I want to explore other robotics simulators, like [NVIDIA Omniverse IsaacSim](https://docs.omniverse.nvidia.com/isaacsim/latest/index.html). 
 
 ### Final (long-term) Objective
-Thanks to the huge amount of available ROV, Environments, and Creatures models gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models), I want to: 
+Thanks to the huge amount of available models of ROV, Environments, and Creatures gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models), I want to: 
 - Create a URDF Model of MBARI's  [ROV Doc Ricketts](https://www.mbari.org/technology/rov-doc-ricketts/)
    - Model each thruster as an independent joint
    - Model and Integrate the actuated ROV's Manipulator (with all joints) <br/>
