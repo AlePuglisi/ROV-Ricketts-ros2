@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="Rov_Ricketts" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="base.xacro" />
+  <xacro:include filename="base_separated.xacro" />
   <xacro:include filename="thrusters.xacro" />
   
   <!-- Use macro to define Base and Thrusters -->
   <link name="world"/>
   <!-- Base -->
+  <!-- <xacro:base_separated_macro/> -->
   <xacro:base_macro/>
   <!-- Front Thrusters -->
   <xacro:thruster_macro name="front_sx">

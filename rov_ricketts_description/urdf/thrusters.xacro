@@ -34,7 +34,7 @@
           rpy="0 0 0" />
         <geometry>
           <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/thruster.stl" />
+            filename="file://$(find rov_ricketts_description)/meshes/propeller.stl" />
         </geometry>
         <material
           name="">
@@ -46,7 +46,7 @@
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/thruster.stl" />
+            filename="file://$(find rov_ricketts_description)/meshes/propeller.stl" />
         </geometry>
       </collision>
     </link>

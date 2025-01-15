@@ -2,6 +2,9 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="base_macro">
+  <!-- This macro is used to define robot body as unique links. This can be useful if you want to set a simple 
+        approxiametd Inertia for the overall body -->
+
     <joint name="world_base_joint" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <parent link="world" />
@@ -9,41 +12,116 @@
     </joint>
 
     <link name="base_link">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="3.1152" />
-      <inertia
-        ixx="0.0036482"
-        ixy="7.8081E-07"
-        ixz="1.7521E-06"
-        iyy="0.0062179"
-        iyz="-1.4424E-06"
-        izz="0.0034682" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find rov_ricketts_description)/meshes/body.stl" scale="1.0 1.0 1.0"/>
-      </geometry>
-      <material name="">
-        <color rgba="1 0.95 0.5 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="file://$(find rov_ricketts_description)/meshes/body.stl" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </collision>
-  </link>
+
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="3.1152" />
+        <inertia
+          ixx="0.0036482"
+          ixy="7.8081E-07"
+          ixz="1.7521E-06"
+          iyy="0.0062179"
+          iyz="-1.4424E-06"
+          izz="0.0034682" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/float.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/float.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/frame.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/frame.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/thrusters.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/thrusters.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/equipment.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/equipment.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    
+    </link>
   </xacro:macro>
 </robot>
