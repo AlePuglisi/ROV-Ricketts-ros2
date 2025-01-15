@@ -33,7 +33,7 @@
           rpy="0 0 0" />
         <geometry>
           <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/float.dae" scale="1.0 1.0 1.0"/>
+            filename="file://$(find rov_ricketts_description)/meshes/floatLogo.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
       <collision>
@@ -42,11 +42,11 @@
           rpy="0 0 0" />
         <geometry>
           <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/float.dae" scale="1.0 1.0 1.0"/>
+            filename="file://$(find rov_ricketts_description)/meshes/floatLogo.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
 
-      <visual>
+      <!-- <visual>
         <origin
           xyz="0 0 0"
           rpy="0 0 0" />
@@ -54,6 +54,9 @@
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
         </geometry>
+        <material name="logo">
+          <texture filename="file://$(find rov_ricketts_description)/textures/logo.png"/>
+        </material>
       </visual>
       <collision>
         <origin
@@ -63,7 +66,7 @@
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
         </geometry>
-      </collision>
+      </collision> -->
 
       <visual>
         <origin
