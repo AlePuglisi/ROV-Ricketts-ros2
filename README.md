@@ -50,6 +50,8 @@ This emoji " :point_right: " Indicate the current step in development.
 ## :point_right: Step 1. Set up The Simulation
 
 ## 1.1. Create ROV Ricketts URDF from Sketchfab Model
+<image heigth=400 width=688 src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
+
 
 ## 1.2. Set up empty underwater World Gazebo Harmonic Simulation
 
