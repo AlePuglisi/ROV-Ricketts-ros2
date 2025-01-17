@@ -50,14 +50,41 @@ This emoji " :point_right: " Indicate the current step in development.
 ## :point_right: Step 1. Set up The Simulation
 
 ## 1.1. Create ROV Ricketts URDF from Sketchfab Model
-<image heigth=400 width=688 src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
+- First I download [Doc Ricketts ROV](https://sketchfab.com/3d-models/doc-ricketts-rov-def365ad47894a06b5f0fb2876795bf9) model from Sketchfab, in ``fbx`` format.
+- Import it in Blender to create separate meshes (with texture) for each piece
+- Export each model as ``dae`` (COLLADA format)<br/>
 
+> [!TIP]
+> I discovered that ``stl `` format does not support texture by default, setting it up may be possible but hard. <br/>
+> [Here](https://github.com/AlePuglisi/ROV-Ricketts-ros2/tree/main/rov_ricketts_description/meshes/stl) you can find stl models, but for an astonishing visualization, rely on ``dae``.<br/>
+> With the COLLADA format, textures are easy to load (just be sure the texture png file is in the correct referenced path inside dae XML file). 
+
+- Create the ``URDF`` connecting and positioning each thruster, as a revolute joint (probably continuous joint will be used later on). <br/>
+I used the ``xacro`` format, to make it cleaner and allow a simple customization at launch time. 
+- Inertia property tuning will be done later on when setting up Gazebo simulation
+- Creta a simple launcher [``display.launch.py``](https://github.com/AlePuglisi/ROV-Ricketts-ros2/blob/main/rov_ricketts_description/launch/display.launch.py) to run Rviz, robot_state_publisher, joint_state_publisher (and its GUI).
+- Add relevant visualization objects in Rviz and save as [`` rov_monitor.rviz`` ](https://github.com/AlePuglisi/ROV-Ricketts-ros2/blob/main/rov_ricketts_description/config/rov_monitor.rviz). 
+
+Finally, it is possible to visualize the robot in Rviz and move the thrusters with joint_state_publisher_gui: <br/>
+```
+# Terminal
+ros2 launch rov_ricketts_description display.launch.py
+```
+
+<image heigth=400 width=688 src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
+   
+
+I will model and attach the robotic arm later on, because it is defined as a single piece in the 3D model, three options are possible:
+- 1. Remodel it with simple cylinders and parallelepiped shapes, connected by revolute joints, directly in URDF.
+- 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
+- 3. Use the original model and modify it to cut the links, than use this as URDF links
+Then my plan is to spawn the robot with/without the arm using a launch argument. <br/>
 
 ## 1.2. Set up empty underwater World Gazebo Harmonic Simulation
 
-## 1.3. Tune Thrusters, Buoyancy, and other fluid dynamic Plugins for the ROV Model 
+## 1.3. Tune Links Inertia, Buoyancy, fluid dynamic Plugins, and Thrusters for the ROV Model 
 
-## 1.4. Spwan and Move ROV Ricketts in the empty world
+## 1.4. Move ROV Ricketts in the empty world
 
 ## 1.5. Include 
 
