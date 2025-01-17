@@ -85,9 +85,9 @@ Then I plan to spawn the robot with/without the arm using a launch argument. <br
 
 ## 1.3. Tune Links Inertia, Buoyancy, fluid dynamic Plugins, and Thrusters for the ROV Model 
 
-## 1.4. Move ROV Ricketts in the empty world
+## 1.4. Move ROV Ricketts in an Empty Gazebo World
 
-## 1.5. Include 
+## 1.5. Add ROV Manipulator to the URDF Model 
 
 ## Step 2. Create Gazebo Deep Sea World from Sketchfab Models
 
