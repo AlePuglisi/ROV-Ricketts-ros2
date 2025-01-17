@@ -78,7 +78,8 @@ I will model and attach the robotic arm later on, because it is defined as a sin
 - 1. Remodel it with simple cylinders and parallelepiped shapes, connected by revolute joints, directly in URDF.
 - 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
 - 3. Use the original model and modify it to cut the links, than use this as URDF links
-Then my plan is to spawn the robot with/without the arm using a launch argument. <br/>
+
+Then I plan to spawn the robot with/without the arm using a launch argument. <br/>
 
 ## 1.2. Set up empty underwater World Gazebo Harmonic Simulation
 
