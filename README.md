@@ -74,20 +74,36 @@ ros2 launch rov_ricketts_description display.launch.py
 <image heigth=400 width=688 src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
    
 
-I will model and attach the robotic arm later on, because it is defined as a single piece in the 3D model, three options are possible:
-- 1. Remodel it with simple cylinders and parallelepiped shapes, connected by revolute joints, directly in URDF.
-- 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
-- 3. Use the original model and modify it to cut the links, than use this as URDF links
+The next step is to model and attach the robotic arm to Doc Ricketts.<br/>
 
-Then I plan to spawn the robot with/without the arm using a launch argument. <br/>
+##  1.2. Add ROV Manipulator to the URDF Model 
+The arm is defined as a single piece in the 3D model, three options are possible to derive the URDF model:
+- [ ] 1. Remodel it with simple cylinders and parallelepiped shapes, connected by revolute joints, directly in URDF.
+- [ ] 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
+- [x] 3. Use the original model and modify it to cut the links, then use this as URDF links
 
-## 1.2. Set up empty underwater World Gazebo Harmonic Simulation
+Once Doc Ricketts Arm URDF has been derived, to make the robot reconfigurable at launch time, we can decide at launch time if we want to load it or not. <br/>
+To achieve this flexibility feature, we can use a launch argument, and the xacro conditional statement. <br/>
 
-## 1.3. Tune Links Inertia, Buoyancy, fluid dynamic Plugins, and Thrusters for the ROV Model 
+- To configure Ricketts **with the Robotic Arm**: 
+```
+# Terminal
+ros2 launch rov_ricketts_description display.launch.py load_arm:=true
+```
+- To configure Ricketts **without the Robotic Arm**: 
+```
+# Terminal
+ros2 launch rov_ricketts_description display.launch.py load_arm:=false
+```
+(Notice that the default value of load_arm is false, so argument initialization can be neglected in that case)
 
-## 1.4. Move ROV Ricketts in an Empty Gazebo World
+## 1.3. Set up empty underwater World in Gazebo Harmonic
 
-## 1.5. Add ROV Manipulator to the URDF Model 
+## 1.4. Tune Links Inertia, Buoyancy, fluid dynamic Plugins, and Thrusters for the ROV Model 
+
+## 1.5. Move ROV Ricketts in an Empty Gazebo World
+
+
 
 ## Step 2. Create Gazebo Deep Sea World from Sketchfab Models
 
