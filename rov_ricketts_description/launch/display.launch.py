@@ -73,7 +73,7 @@ def generate_launch_description():
     return LaunchDescription([
         gui_arg,
         #model_arg,
-        #wheel_mode_arg,
+        load_arm_arg,
         rviz_arg,
 
         joint_state_publisher_node,
