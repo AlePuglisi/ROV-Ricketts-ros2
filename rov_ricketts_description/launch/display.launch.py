@@ -32,12 +32,15 @@ def generate_launch_description():
         name='rviz_config', default_value=str(default_rviz_config_path),
         description='Absolute path to rviz config file')
     
+    default_load_arm = 'false'
+    load_arm_arg = DeclareLaunchArgument('load_arm',
+                                      default_value = default_load_arm)
 
     # robot_description = ParameterValue(
     #     Command(['xacro ', LaunchConfiguration('model')]),
     #     value_type=str)
     
-    robot_description_command = Command(['xacro ', xacro_path])# ' wheel_mode:=', LaunchConfiguration('wheel_mode')]
+    robot_description_command = Command(['xacro ', xacro_path, ' load_arm:=', LaunchConfiguration('load_arm')])
 
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
