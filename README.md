@@ -46,13 +46,16 @@ This emoji " :point_right: "Indicates the current step in development.
 
 ## Step 0. Install and Set up ROS2 + Used ROS Packages 
 ### Prerequisite
-Linux Ubuntu 24.04 
-
+- Linux Ubuntu 24.04 
+- ROS2 Jazzy
 > [!NOTE]
 > Alternatively, you can build a ``Docker`` container to work with ROS2 Jazzy in your OS.<br/>
 > If you are using Docker, refer to this section just to know the required dependencies.
 
-### Install ROS2 Jazzy 
+<details> 
+<summary> Install and Set Up ROS2 Jazzy </summary>
+   
+- **Install** ROS Jazzy and source 
 Refer to [ros documentation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for the step-by-step installation tutorial. <br/>
 
 Anytime you open a new terminal, you should source your underlay ros environment with:
@@ -62,22 +65,20 @@ Anytime you open a new terminal, you should source your underlay ros environment
 # Possible values are: setup.bash, setup.sh, setup.zsh
 source /opt/ros/jazzy/setup.bash
 ```
-To avoid doing it everytime, add this to your bashrc
+To avoid doing it every time, add that command to your ``bashrc``, opening it with a text editor of your choice:
 ```
-# Terminal
+# Terminal (use your preferred text editor tool)
 gedit ~/.bashrc
 ```
-Add the line ``source /opt/ros/jazzy/setup.bash`` at the end of your ``bashrc``
+And add the line ``source /opt/ros/jazzy/setup.bash`` at the end.
 
-
-### Set up ROS Environment and tools 
-- If not automatically installed, install ``colcon``, the build tool for ROS2: 
+- If not automatically installed, **install ``colcon``**, the build tool for ROS2: 
 ```
 # Terminal
 sudo apt install python3-colcon-common-extensions
 ```
 
-- Create a ros2 workspace to position this project packages:<br/>
+- Create and build a **ros2 workspace** to position this project packages:<br/>
 In your preferred directory
 ```
 # Terminal
@@ -87,7 +88,7 @@ mkdir src
 colcon build
 ```
 
-- Source your ros2 workspace and the colcon argmícomplete environment:<br/>
+- **Source** your ros2 workspace and the colcon argmícomplete environment:<br/>
 As done for the ros underlay, you need to source the overlay setup.bash when you build it, again you can add that to the bashrc
 ```
 # Terminal
@@ -97,7 +98,7 @@ Add the line ``source ~/ros2_ws/install/setup.bash`` <br/>
 and ``source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`` to complete colocn commands by pressing Tab.
 
 ### Install Additional Packages
-To launch this packages, you may need ROS2 packages not installed with ros-jazzy-desktop. <br/>
+To launch this project packages, you may need ROS2 packages not installed with ros-jazzy-desktop. <br/>
 I will update this list during implementation:
 
 - ``xacro``
@@ -108,7 +109,7 @@ I will update this list during implementation:
 # Terminal
 sudo apt install ros-jazzy-xacro ros-jazzy-joint-state-publisher-gui 
 ```
-
+</details>
 
 ### Clone this repository and build 
 Move to your ros workspace, inside /src folder (where all your packages are located) 
