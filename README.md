@@ -71,7 +71,7 @@ Finally, it is possible to visualize the robot in Rviz and move the thrusters wi
 ros2 launch rov_ricketts_description display.launch.py
 ```
 
-<image heigth=400 width=688 src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
+<image src=https://github.com/user-attachments/assets/cbda4232-3072-4fbb-bc24-a6344e62501a>
    
 
 The next step is to model and attach the robotic arm to Doc Ricketts.<br/>
@@ -81,6 +81,24 @@ The arm is defined as a single piece in the 3D model, three options are possible
 - [ ] 1. Remodel it with simple cylinders and parallelepiped shapes, connected by revolute joints, directly in URDF.
 - [ ] 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
 - [x] 3. Use the original model and modify it to cut the links, then use this as URDF links
+
+Unfortunately, I didn't find much information about the arm structure, I'm not sure if ``arm_link4`` needs to be further divided, with a roll joint.
+Suggestions and any sharing of information may help in improving the model!<br/>
+
+<image src=https://github.com/user-attachments/assets/b9fa2f4b-dfab-4e58-9d6e-dacdb1e21adf>
+
+I also include the **arm_tool** frame, this will help when performing manipulation tasks. 
+
+> [!TIP]
+> A useful tag to define gripper joints is "mimic": <br/>
+>
+>     <joint name="${name}_link4_claw_left" type="revolute">
+>     <mimic joint="${name}_link4_claw_right" multiplier="1" offset="0"/>
+>     ....
+> 
+> This forces this joint to move around its rotation axis as the mimic joint times the multiplier.<br/>
+> (joint_state = mimic_joint_state * multiplier) <br/>
+> Changing the multiplier value we can set an inverse rotation or a transformation ratio. 
 
 Once Doc Ricketts Arm URDF has been derived, to make the robot reconfigurable at launch time, we can decide at launch time if we want to load it or not. <br/>
 To achieve this flexibility feature, we can use a launch argument, and the xacro conditional statement. <br/>
@@ -96,6 +114,13 @@ ros2 launch rov_ricketts_description display.launch.py load_arm:=true
 ros2 launch rov_ricketts_description display.launch.py load_arm:=false
 ```
 (Notice that the default value of load_arm is false, so argument initialization can be neglected in that case)
+
+As can be seen, all joints have been articulated properly! <br/>
+Joint Limits and dynamical joints/body properties will be defined in the next steps...
+
+<image src=https://github.com/user-attachments/assets/213589b3-8bbf-428d-9736-d078ce1a5987>
+
+
 
 ## 1.3. Set up empty underwater World in Gazebo Harmonic
 
