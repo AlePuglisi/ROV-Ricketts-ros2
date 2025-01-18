@@ -42,10 +42,83 @@ Thanks to the huge amount of available models of ROV, Environments, and Creature
 ... This is a lot just for a single person, :raised_hand_with_fingers_splayed: a big high five to anyone opening an issue for suggestions, ideas, or reviews. <br/>
 Feel free to [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to contribute to this project. <br/>
 
-This emoji " :point_right: " Indicate the current step in development. 
+This emoji " :point_right: "Indicates the current step in development. 
 
 ## Step 0. Install and Set up ROS2 + Used ROS Packages 
-... WIP ... 
+### Prerequisite
+Linux Ubuntu 24.04 
+
+> [!NOTE]
+> Alternatively, you can build a ``Docker`` container to work with ROS2 Jazzy in your OS.<br/>
+> If you are using Docker, refer to this section just to know the required dependencies.
+
+### Install ROS2 Jazzy 
+Refer to [ros documentation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) for the step-by-step installation tutorial. <br/>
+
+Anytime you open a new terminal, you should source your underlay ros environment with:
+```
+# Terminal
+# Replace ".bash" with your shell if you're not using bash
+# Possible values are: setup.bash, setup.sh, setup.zsh
+source /opt/ros/jazzy/setup.bash
+```
+To avoid doing it everytime, add this to your bashrc
+```
+# Terminal
+gedit ~/.bashrc
+```
+Add the line ``source /opt/ros/jazzy/setup.bash`` at the end of your ``bashrc``
+
+
+### Set up ROS Environment and tools 
+- If not automatically installed, install ``colcon``, the build tool for ROS2: 
+```
+# Terminal
+sudo apt install python3-colcon-common-extensions
+```
+
+- Create a ros2 workspace to position this project packages:<br/>
+In your preferred directory
+```
+# Terminal
+mkdir ros2_ws
+cd ros2_ws
+mkdir src
+colcon build
+```
+
+- Source your ros2 workspace and the colcon argmícomplete environment:<br/>
+As done for the ros underlay, you need to source the overlay setup.bash when you build it, again you can add that to the bashrc
+```
+# Terminal
+gedit ~/.bashrc
+```
+Add the line ``source ~/ros2_ws/install/setup.bash`` <br/>
+and ``source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`` to complete colocn commands by pressing Tab.
+
+### Install Additional Packages
+To launch this packages, you may need ROS2 packages not installed with ros-jazzy-desktop. <br/>
+I will update this list during implementation:
+
+- ``xacro``
+- ``joint_state_publisher_gui``
+- ...
+
+```
+# Terminal
+sudo apt install ros-jazzy-xacro ros-jazzy-joint-state-publisher-gui 
+```
+
+
+### Clone this repository and build 
+Move to your ros workspace, inside /src folder (where all your packages are located) 
+```
+# Terminal
+git clone https://github.com/AlePuglisi/ROV-Ricketts-ros2.git
+```
+then, move back to the workspace folder (before /src), and build your workspace.<br/>
+Now you are ready to test this project!<br/>
+(Remember that after building the workspace, you need to source your bashrc, so your overlay and underlay will be sourced, just run ``source ~/.bashrc``)
 
 ## :point_right: Step 1. Set up The Simulation
 
