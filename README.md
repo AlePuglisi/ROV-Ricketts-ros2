@@ -17,7 +17,7 @@ Thanks to the huge amount of available models of ROV, Environments, and Creature
    - Model and Integrate the actuated ROV's Manipulator (with all joints) <br/>
      (Even If currently Ricketts has 2 arms for advanced manipulation tasks, I will consider this only in the future) 
 - Define an approximated fluid dynamic model of the ROV, for simulation
-- Learn to correctly set up Gazebo sim plugins to simulate thrusters, buoyancy, and Fluidodinamic force
+- Learn to correctly set up Gazebo sim plugins to simulate thrusters, buoyancy, and fluid dynamics force
 - Create a custom sdf world file, with deep-sea environments from MBARI's 3D sea floor reconstruction 
 - Add deep sea creatures as [Gazebo Actors](https://gazebosim.org/docs/latest/actors/), to make this world even more alive. <br/>
   This is possible thanks to [Photogrammetry Techniques](https://www.mbari.org/wp-content/uploads/Kaiser_Nicole.pdf) used by MBARI.
