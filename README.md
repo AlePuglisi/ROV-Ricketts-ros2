@@ -156,12 +156,18 @@ The arm is defined as a single piece in the 3D model, three options are possible
 - [ ] 2. Create a new 3D model from scratch, with separate links, using the original arm as a reference
 - [x] 3. Use the original model and modify it to cut the links, then use this as URDF links
 
-Unfortunately, I didn't find much information about the arm structure, I'm not sure if ``arm_link4`` needs to be further divided, with a roll joint.
-Suggestions and any sharing of information may help in improving the model!<br/>
+<br/>
 
 <image src=https://github.com/user-attachments/assets/b9fa2f4b-dfab-4e58-9d6e-dacdb1e21adf>
+   
+I found the information about the robotic arm on [this interesting video](https://www.youtube.com/watch?v=BTdeXxaGfAs&t=303s&ab_channel=MBARI%28MontereyBayAquariumResearchInstitute%29) about ROV technologies at MBARI.<br/>
+Thank you very much, Benjamin Erwin :pray:. <br/>
+ROV Doc Ricketts is equipped with two robotic arms: 
+- **Shilling TITAN 4 Manipulaotr** (T4): Strong arm, for heavy work but less precise.
+- Aluminum Arm: very dexterous, for precise manipulation. 
 
-I also include the **arm_tool** frame, this will help when performing manipulation tasks. 
+I only modeled the [T4 manipulator](https://www.technipfmc.com/media/hpkjrigr/titan-4-datasheet.pdf),  available in the 3D Model. <br/>
+ (In the URDF, I include the **arm_tool** frame, because this will help when performing manipulation tasks.)
 
 > [!TIP]
 > A useful tag to define gripper joints is "mimic": <br/>
