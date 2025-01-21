@@ -158,11 +158,11 @@
 
     <joint name="${name}_link3_link4" type="revolute">
       <origin
-          xyz=" 0.017629 0 -0.170456"
-          rpy="0 ${pi - 0.0952} 0" />
+          xyz="0.0127 0.0 -0.1270"
+          rpy="0 -0.1007 0" />
       <parent link="${name}_link3" />
       <child link="${name}_link4" />
-      <axis xyz="0  0 1" />
+      <axis xyz="1  0 0" />
       <limit
         lower="-3.14"
         upper="3.14"
@@ -174,7 +174,7 @@
       name="${name}_link4">
       <visual>
         <origin
-          xyz="0 0 0"
+          xyz="0 0 -0.05258 "
           rpy="0 0 0" />
         <geometry>
           <mesh
@@ -195,11 +195,50 @@
       </collision>
     </link>
 
+    <joint name="${name}_link4_link5" type="revolute">
+      <origin
+          xyz="0.0 -0.000111 -0.070007"
+          rpy="${pi} 0 0" />
+      <parent link="${name}_link4" />
+      <child link="${name}_link5" />
+      <axis xyz="0  0 1" />
+      <limit
+        lower="-3.14"
+        upper="3.14"
+        effort="20"
+        velocity="10" />
+    </joint>
+
+    <link
+      name="${name}_link5">
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/arm_link5.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.5 0.5 0.5 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/arm_link5.stl" />
+        </geometry>
+      </collision>
+    </link>
+
     <joint name="${name}_link4_claw_right" type="revolute">
       <origin
           xyz=" 0.0042 -0.0328 0.14"
           rpy="0 0 0" />
-      <parent link="${name}_link4" />
+      <parent link="${name}_link5" />
       <child link="${name}_claw_right" />
       <axis xyz="1 0 0" />
       <limit
@@ -239,7 +278,7 @@
       <origin
           xyz=" 0.0042 0.0328 0.14"
           rpy="0 0 ${pi}" />
-      <parent link="${name}_link4" />
+      <parent link="${name}_link5" />
       <child link="${name}_claw_left" />
       <axis xyz="1 0 0" />
       <limit
@@ -278,7 +317,7 @@
       <origin
           xyz=" 0 0  0.271942"
           rpy="0 0 ${pi}" />
-      <parent link="${name}_link4" />
+      <parent link="${name}_link5" />
       <child link="${name}_tool" />
     </joint>
 
