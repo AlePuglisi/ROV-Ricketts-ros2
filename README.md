@@ -157,8 +157,8 @@ The arm is defined as a single piece in the 3D model, three options are possible
 - [x] 3. Use the original model and modify it to cut the links, then use this as URDF links
 
 <br/>
+<image src=https://github.com/user-attachments/assets/c58b649c-45cf-4ff8-883d-6c081f94382e>
 
-<image src=https://github.com/user-attachments/assets/b9fa2f4b-dfab-4e58-9d6e-dacdb1e21adf>
    
 I found the information about the robotic arm on [this interesting video](https://www.youtube.com/watch?v=BTdeXxaGfAs&t=303s&ab_channel=MBARI%28MontereyBayAquariumResearchInstitute%29) about ROV technologies at MBARI.<br/>
 Thank you very much, Benjamin Erwin :pray:. <br/>
@@ -196,17 +196,29 @@ ros2 launch rov_ricketts_description display.launch.py load_arm:=false
 (Notice that the default value of load_arm is false, so argument initialization can be neglected in that case)
 
 As can be seen, all joints have been articulated properly! <br/>
-Joint Limits and dynamical joints/body properties will be defined in the next steps...
+Brief **Joint actuation Demo**:mechanical_arm:: 
 
-<image src=https://github.com/user-attachments/assets/213589b3-8bbf-428d-9736-d078ce1a5987>
+<image src=https://github.com/user-attachments/assets/5c3c9c66-c7f4-4276-957b-2d1cf4b8ae2d>
+
+Joint limits and dynamic joints/body properties will be defined in the next steps...
+
+## 1.3. Tune Model Inertia parameters
+Inertia parameters are fundamental for setting up Gazebo simulation. <br/>
+
+- **TITAN 4** MANIPULATOR: 
+From the manipulator's datasheet, it is possible to extract accurate information about its characteristics.<br/>
+Some of them will be useful to set torque limitations and other control-related aspects, for now, let's focus on inertial properties. <br/>
+
+ For a reliable simulation in Gazebo, we have to define the mass, inertia matrix, and center of mass position of each link. <br/>
+ To extract these numbers, we can use the information about the **arm material** which is primarily Titanium (as the name suggests). <br/>
+ Using Titanium density we can then use the mesh volume to compute mass and some software resources to compute CoM position and Inertia matrix automatically.  
 
 
+## 1.4. Set up an empty underwater World in Gazebo Harmonic
 
-## 1.3. Set up empty underwater World in Gazebo Harmonic
+## 1.5. Add and Tune Buoyancy, fluid dynamic, and thruster Gazebo sim plugins
 
-## 1.4. Tune Links Inertia, Buoyancy, fluid dynamic Plugins, and Thrusters for the ROV Model 
-
-## 1.5. Move ROV Ricketts in an Empty Gazebo World
+## 1.6. Move ROV Ricketts in an Empty Gazebo World
 
 
 
