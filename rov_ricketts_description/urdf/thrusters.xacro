@@ -2,21 +2,19 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="thruster_macro" params="name *origin">
-    <joint name="${name}_thruster" type="revolute">
+    <joint name="${name}_thruster" type="continuous">
       <xacro:insert_block name="origin"/>
       <parent link="base_link" />
       <child link="${name}" />
       <axis xyz="0 0 1" />
       <limit
-        lower="-3.14"
-        upper="3.14"
         effort="20"
         velocity="10" />
     </joint>
 
     <link
       name="${name}">
-      <inertial>
+      <!-- <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <mass value="0.12821" />
         <inertia
@@ -26,7 +24,7 @@
           iyy="2.9934E-05"
           iyz="2.5988E-11"
           izz="4.8164E-05" />
-      </inertial>
+      </inertial> -->
       <visual>
         <origin
           xyz="0 0 0"
