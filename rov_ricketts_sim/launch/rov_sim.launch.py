@@ -73,11 +73,11 @@ def generate_launch_description():
         parameters=[params]
     )
 
-    joint_state_publisher_node = Node(
-                package="joint_state_publisher",
-                executable="joint_state_publisher",
-                name="joint_state_publisher",
-    )
+    # joint_state_publisher_node = Node(
+    #             package="joint_state_publisher",
+    #             executable="joint_state_publisher",
+    #             name="joint_state_publisher",
+    # )
 
     ## Launch Rviz
     rviz_node = Node(
@@ -129,7 +129,7 @@ def generate_launch_description():
         rviz_arg,
 
         robot_state_publisher_node,
-        joint_state_publisher_node,
+        #joint_state_publisher_node,
         rviz_node,
 
         gz_model_env,

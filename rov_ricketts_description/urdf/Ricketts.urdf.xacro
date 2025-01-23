@@ -4,7 +4,7 @@
   <xacro:include filename="base_separated.xacro" />
   <xacro:include filename="thrusters.xacro" />
 
-  <xacro:include filename="thrusters_joint_states_plugin.xacro" /> 
+  <!-- <xacro:include filename="thrusters_joint_states_plugin.xacro" />  -->
 
   <!-- Use macro to define Base and Thrusters -->
   <link name="world"/>
@@ -41,11 +41,14 @@
   <xacro:arg name="load_arm" default="false" />
   <xacro:if value="$(arg load_arm)">
     <xacro:include filename="arm.xacro" />
-    <xacro:include filename="arm_joint_states_plugin.xacro" />
+    <!-- <xacro:include filename="arm_joint_states_plugin.xacro" /> -->
     <xacro:arm_macro name="arm">
               <origin xyz="-0.291179 0.967229 ${-0.50857-0.1132}" rpy="0 0 0" />
     </xacro:arm_macro>
     <xacro:joint_state_macro name="arm"/>
   </xacro:if>
+
+  <xacro:include filename="joint_states_plugin.xacro" />
+
 
 </robot>

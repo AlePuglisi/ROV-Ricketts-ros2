@@ -4,16 +4,23 @@
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
 
-# gz topic published by thrusters JointState plugin
-- ros_topic_name: "thrusters/joint_states"
-  gz_topic_name: "thrusters/joint_states"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "gz.msgs.Model"
-  direction: GZ_TO_ROS
+# # gz topic published by thrusters JointState plugin
+# - ros_topic_name: "thrusters/joint_states"
+#   gz_topic_name: "thrusters/joint_states"
+#   ros_type_name: "sensor_msgs/msg/JointState"
+#   gz_type_name: "gz.msgs.Model"
+#   direction: GZ_TO_ROS
+
+# # gz topic published by Arm JointState plugin
+# - ros_topic_name: "arm/joint_states"
+#   gz_topic_name: "arm/joint_states"
+#   ros_type_name: "sensor_msgs/msg/JointState"
+#   gz_type_name: "gz.msgs.Model"
+#   direction: GZ_TO_ROS
 
 # gz topic published by Arm JointState plugin
-- ros_topic_name: "arm/joint_states"
-  gz_topic_name: "arm/joint_states"
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
