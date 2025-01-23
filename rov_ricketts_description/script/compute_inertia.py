@@ -3,8 +3,9 @@ import trimesh
 import numpy as np
 from ament_index_python.packages import get_package_share_directory
 
+
 # Compute TITAN 4 Inertia: 
-density = 4.5  #[g/cm^3]
+density = 4.5  #[g/cm^3], Titanium
 
 arm_links = ["arm_base", "arm_link1", "arm_link2", "arm_link3", "arm_link4", "arm_link5", "grip_claw", "grip_claw"]
 #arm_CoM_links = ["arm_base_CoM", "arm_link1_CoM", "arm_link2_CoM", "arm_link3_CoM", "arm_link4_CoM", "arm_link5_CoM", "grip_claw_CoM", "grip_claw_CoM"]
@@ -32,3 +33,29 @@ for link in arm_links:
     i+=1
 
 print("\ntotal mass: " + str(sum(mass)))
+
+# Compute BASE Inertia
+base_mesh_name = "body"
+# base mass taken from MBARI's website
+base_mass = 4700
+mesh_path = get_package_share_directory('rov_ricketts_description')
+base_stl_file = mesh_path + "/meshes/stl/" + base_mesh_name + ".stl"
+base_mesh = trimesh.load(base_stl_file)
+base_volume = base_mesh.volume   
+base_CoM = base_mesh.center_mass          # [m] (1x3)
+base_inertia_matrix = base_mesh.moment_inertia*base_mass/base_volume # (3x3) [Kg*m^2] 
+
+print(f"\nBase Link: \n Volume= {base_volume}\nMass= {base_mass}\nCenter of Mass= {base_CoM}\nInertia Matrix Origin= {base_inertia_matrix}\n------------------------")
+
+# Compute Propeller Inertia
+propeller_mesh_name = "propeller"
+propeller_density = 2.70 #[g/cm^3], hyp: Alluminum 
+mesh_path = get_package_share_directory('rov_ricketts_description')
+propeller_stl_file = mesh_path + "/meshes/" + propeller_mesh_name + ".stl"
+propeller_mesh = trimesh.load(propeller_stl_file)
+propeller_volume = propeller_mesh.volume   
+propeller_mass = propeller_volume * propeller_density * 1000 
+propeller_CoM = propeller_mesh.center_mass          # [m] (1x3)
+propeller_inertia_matrix = propeller_mesh.moment_inertia*propeller_mass/propeller_volume # (3x3) [Kg*m^2] 
+
+print(f"\Propeller Link: \n Volume= {propeller_volume}\nMass= {propeller_mass}\nCenter of Mass= {propeller_CoM}\nInertia Matrix Origin= {propeller_inertia_matrix}\n------------------------")

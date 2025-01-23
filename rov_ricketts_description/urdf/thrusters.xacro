@@ -14,17 +14,18 @@
 
     <link
       name="${name}">
-      <!-- <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="0.12821" />
+      <inertial>
+        <origin xyz="1.29123983e-04 -4.30643335e-05  6.65557479e-04" 
+                rpy="0 0 0" />
+        <mass value="2.8201033788020022" />
         <inertia
-          ixx="3.7005E-05"
-          ixy="-1.9987E-08"
-          ixz="-3.8346E-12"
-          iyy="2.9934E-05"
-          iyz="2.5988E-11"
-          izz="4.8164E-05" />
-      </inertial> -->
+          ixx="1.36253391E-02"
+          ixy="-3.62214961E-07"
+          ixz="-6.16491988E-07"
+          iyy="1.36232618E-02"
+          iyz="-9.76544753E-06"
+          izz="2.52722006E-02" />
+      </inertial>
       <visual>
         <origin
           xyz="0 0 0"

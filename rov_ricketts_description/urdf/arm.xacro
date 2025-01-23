@@ -316,7 +316,7 @@
       </collision>
     </link>
 
-    <joint name="${name}_link4_claw_right" type="revolute">
+    <joint name="${name}_link5_claw_right" type="revolute">
       <origin
           xyz=" 0.0042 -0.0328 0.14"
           rpy="0 0 0" />
@@ -369,8 +369,8 @@
       </collision>
     </link>
   
-    <joint name="${name}_link4_claw_left" type="revolute">
-      <mimic joint="${name}_link4_claw_right" multiplier="1" offset="0"/>
+    <joint name="${name}_link5_claw_left" type="revolute">
+      <mimic joint="${name}_link5_claw_right" multiplier="1" offset="0"/>
       <origin
           xyz=" 0.0042 0.0328 0.14"
           rpy="0 0 ${pi}" />

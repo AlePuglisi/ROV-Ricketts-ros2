@@ -19,11 +19,12 @@ def generate_launch_description():
     
 
     # pkg_dir = get_package_share_directory("rov_ricketts_description")
-    xacro_path = os.path.join(description_path, "urdf", "Ricketts.xacro")
+    xacro_path = os.path.join(description_path, "urdf", "Ricketts.urdf.xacro")
 
     gui_arg = DeclareLaunchArgument(
         name='gui', default_value='true', choices=['true', 'false'],
         description='Flag to enable joint_state_publisher_gui')
+    
     # model_arg = DeclareLaunchArgument(
     #     name='model', default_value=str(
     #         model_path),
