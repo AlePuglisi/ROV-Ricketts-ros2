@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <gazebo>
+      <plugin
+        filename="gz-sim-buoyancy-engine-system"
+        name="gz::sim::systems::BuoyancyEngine">
+        <link_name>base_link</link_name>
+        <namespace>rov_ricketts</namespace>
+        <min_volume>-60.0</min_volume>
+        <neutral_volume>0</neutral_volume>
+        <default_volume>-30.0</default_volume>
+        <max_volume>60.0</max_volume>
+        <max_inflation_rate>0.5</max_inflation_rate>
+      </plugin>
+    </gazebo>
+</robot>

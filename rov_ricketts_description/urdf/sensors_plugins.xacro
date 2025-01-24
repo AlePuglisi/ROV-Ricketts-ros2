@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <gazebo reference="base_link">
+        <sensor name="sonar" type="gpu_ray">
+          <pose>-0.26829 -0.00011 1.29141 0 0 0</pose>
+          <update_rate>10</update_rate>
+          <topic>sonar</topic>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1875</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.1415926535897931</min_angle>
+                <max_angle>3.1415926535897931</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>1.57</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.10000000000000001</min>
+              <max>130</max>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+        </sensor>
+    </gazebo>
+</robot>

@@ -5,10 +5,12 @@
   <xacro:include filename="thrusters.xacro" />
   <xacro:include filename="joint_states_plugin.xacro" />
 
+  <xacro:include filename="gazebo_physics.xacro" />
+  <xacro:include filename="sensors_plugins.xacro" />
+
   <!-- <xacro:include filename="thrusters_joint_states_plugin.xacro" />  -->
 
   <!-- Use macro to define Base and Thrusters -->
-  <link name="world"/>
   <!-- Base -->
   <!-- <xacro:base_separated_macro/> -->
   <xacro:base_macro/>
@@ -40,6 +42,7 @@
 
    <!-- Conditional Arm Loading, accordingly to launch argument --> 
   <xacro:arg name="load_arm" default="false" />
+
   <xacro:if value="$(arg load_arm)">
     <xacro:include filename="arm.xacro" />
     <xacro:arm_macro name="arm">

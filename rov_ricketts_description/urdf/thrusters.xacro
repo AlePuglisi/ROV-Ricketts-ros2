@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="thruster_macro" params="name *origin">
     <joint name="${name}_thruster" type="continuous">
       <xacro:insert_block name="origin"/>
-      <parent link="base_link" />
+      <parent link="base_frame" />
       <child link="${name}" />
       <axis xyz="0 0 1" />
       <limit
-        effort="20"
-        velocity="10" />
+        effort="1E12"
+        velocity="200" />
     </joint>
 
     <link
@@ -49,6 +48,18 @@
       </collision>
     </link>
 
+    <gazebo>
+      <plugin
+        filename="gz-sim-thruster-system"
+        name="gz::sim::systems::Thruster">
+        <joint_name>${name}_thruster</joint_name>
+        <thrust_coefficient>0.004</thrust_coefficient>
+        <fluid_density>1000</fluid_density>
+        <propeller_diameter>0.38</propeller_diameter>
+        <max_thrust_cmd>10000</max_thrust_cmd>
+        <min_thrust_cmd>0</min_thrust_cmd>
+      </plugin>
+    </gazebo>
   
   </xacro:macro>
 </robot>

@@ -5,12 +5,6 @@
   <!-- This macro is used to define robot body as unique links. This can be useful if you want to set a simple 
         approxiametd Inertia for the overall body -->
 
-    <joint name="world_base_joint" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <parent link="world" />
-      <child link="base_link" /> 
-    </joint>
-
     <link name="base_link">
 
       <inertial>
@@ -27,6 +21,20 @@
           iyz="31.89417598"
           izz="4961.49762669" />
       </inertial>
+      <!-- <inertial>
+        <origin
+          xyz="-1.81450712  0.00636514  0.5734822"
+          rpy="0 0 0" />
+        <mass
+          value="0.1" />
+        <inertia
+          ixx="1E-2"
+          ixy="0"
+          ixz="0"
+          iyy="1E-2"
+          iyz="0"
+          izz="1E-2" />
+      </inertial> -->
       
       <visual>
         <origin
@@ -127,5 +135,36 @@
       </collision>
     
     </link>
+      <joint name="base_link_frame" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="base_link" />
+      <child link="base_frame" /> 
+    </joint>
+
+    <link name="base_frame">
+      <!-- <inertial>
+        <origin
+          xyz="-1.81450712  0.00636514  0.5734822"
+          rpy="0 0 0" />
+        <mass
+          value="4700.0" />
+        <inertia
+          ixx="2779.72167757"
+          ixy="-142.69321245"
+          ixz="-59.10699454"
+          iyy="4409.88731132"
+          iyz="31.89417598"
+          izz="4961.49762669" />
+      </inertial> -->
+    </link>
+
+<!-- 
+    <joint name="base_sonar_joint" type="fixed">
+      <origin rpy="0 0 0" 
+              xyz="-0.26829 -0.00011 1.29141"/>
+      <parent link="base_link" />
+      <child link="sonar_link" /> 
+    </joint> -->
+
   </xacro:macro>
 </robot>
