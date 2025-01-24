@@ -1,4 +1,5 @@
     # HYDRODYNAMICS, from david-dorf/wamv_gz/models/wamv/wamv.sdf
+    
     <plugin name="gz::sim::systems::Hydrodynamics" filename="gz-sim-hydrodynamics-system">
         <link_name>wamv/base_link</link_name>
         <water_density>1000</water_density>
