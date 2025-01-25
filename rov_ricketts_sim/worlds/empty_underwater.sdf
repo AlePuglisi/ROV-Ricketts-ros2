@@ -12,7 +12,8 @@
 
     <scene>
       <ambient>0.1 0.1 0.1 0.1</ambient>
-      <background>0.7 0.8 0.9 1.0</background>
+      <!-- <background>0.7 0.8 0.9 1.0</background> -->
+      <background>0.007 0.16 0.34 0.9</background>
       <grid>false</grid>
     </scene>
     
@@ -74,8 +75,9 @@
       </link>
     </model>
 
-    <include>
+    <!-- <include>
       <uri> ocean_surface </uri>
-    </include>
+    </include> -->
+    
   </world>
 </sdf>

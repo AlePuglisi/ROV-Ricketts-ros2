@@ -9,9 +9,9 @@
         <namespace>rov_ricketts</namespace>
         <min_volume>-30.0</min_volume>
         <neutral_volume>4.7</neutral_volume>
-        <default_volume>-25.0</default_volume>
+        <default_volume>-9.4</default_volume>
         <max_volume>30.0</max_volume>
-        <surface>0.0</surface>
+        <surface>1.0</surface>
         <max_inflation_rate>2.5</max_inflation_rate>
       </plugin>
 

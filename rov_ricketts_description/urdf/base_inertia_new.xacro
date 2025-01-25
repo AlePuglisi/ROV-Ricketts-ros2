@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="base_macro">
+  <!-- This macro is used to define robot body as unique links. This can be useful if you want to set a simple 
+        approxiametd Inertia for the overall body -->
+
+    <link name="base_link">
+
+      <inertial>
+        <origin
+          xyz="0 0 -0.3"
+          rpy="0 0 0" />
+        <mass
+          value="4700.0" />
+        <inertia
+          ixx="2922.85"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="6658.37"
+          iyz="0.0"
+          izz="6416.48" />
+      </inertial>
+      
+      <visual>
+        <origin
+          xyz="1.8143 -0.004215 -0.560595"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/floatLogo.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+
+      <visual>
+        <origin
+          xyz="1.8143 -0.004215 -0.560595"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/frame.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+
+
+      <visual>
+        <origin
+          xyz="1.8143 -0.004215 -0.560595"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/thrusters.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+
+      <visual>
+        <origin
+          xyz="1.8143 -0.004215 -0.560595"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="file://$(find rov_ricketts_description)/meshes/equipment.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin
+          xyz="0 0 -0.3"
+          rpy="0 0 0" />
+        <geometry>
+             <box size="3.6 2.01 2.08"/>
+        </geometry>
+      </collision>
+    
+    </link>
+
+    <joint name="base_link_frame" type="fixed">
+      <origin rpy="0 0 0" xyz="1.8143 -0.004215 -0.560595"/>
+      <parent link="base_link" />
+      <child link="base_frame" /> 
+    </joint>
+
+    <link name="base_frame">
+      <!-- <inertial>
+        <origin
+          xyz="-1.81450712  0.00636514  0.5734822"
+          rpy="0 0 0" />
+        <mass
+          value="4700.0" />
+        <inertia
+          ixx="2779.72167757"
+          ixy="-142.69321245"
+          ixz="-59.10699454"
+          iyy="4409.88731132"
+          iyz="31.89417598"
+          izz="4961.49762669" />
+      </inertial> -->
+    </link>    
+<!-- 
+    <joint name="base_sonar_joint" type="fixed">
+      <origin rpy="0 0 0" 
+              xyz="-0.26829 -0.00011 1.29141"/>
+      <parent link="base_link" />
+      <child link="sonar_link" /> 
+    </joint> -->
+
+  </xacro:macro>
+</robot>

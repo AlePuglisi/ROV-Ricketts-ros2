@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="Rov_Ricketts" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="base.xacro" />
+  <!-- <xacro:include filename="base.xacro" /> -->
+  <xacro:include filename="base_inertia_new.xacro" />
   <xacro:include filename="base_separated.xacro" />
   <xacro:include filename="thrusters.xacro" />
   <xacro:include filename="joint_states_plugin.xacro" />
