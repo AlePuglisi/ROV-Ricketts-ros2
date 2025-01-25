@@ -14,6 +14,7 @@
   <!-- Base -->
   <!-- <xacro:base_separated_macro/> -->
   <xacro:base_macro/>
+  
   <!-- Front Thrusters -->
   <xacro:thruster_macro name="front_sx">
              <origin xyz="-0.547848 0.4574 0.120838" rpy="${pi/4} ${pi/2} 0"/>

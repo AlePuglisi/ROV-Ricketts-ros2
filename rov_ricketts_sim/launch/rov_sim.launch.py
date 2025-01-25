@@ -100,7 +100,7 @@ def generate_launch_description():
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
                                    '-name', 'rov_ricketts',
-                                   '-z', '-0.1'],
+                                   '-z', '-0.4'],
                         output='screen')
     
     # Create ROS-GZ bridge from config file

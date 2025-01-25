@@ -10,6 +10,9 @@
                 <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
                 <!-- <update_rate>500</update_rate> -->
                 <topic>/joint_states</topic>
+                
+                <!-- <joint_name>base_float_joint</joint_name> -->
+ 
                 <joint_name>front_sx_thruster</joint_name>
                 <joint_name>front_dx_thruster</joint_name>
                 <joint_name>rear_dx_thruster</joint_name>
