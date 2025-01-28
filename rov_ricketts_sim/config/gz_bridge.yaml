@@ -27,43 +27,43 @@
 
 # map ros to gz topic for thusters
 - ros_topic_name: "rov_ricketts/front_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/front_sx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/front_sx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/front_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/front_dx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/front_dx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/rear_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/rear_sx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/rear_sx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/rear_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/rear_dx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/rear_dx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/up_rear_thrust"
-  gz_topic_name: "/model/rov_ricketts/up_rear_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/up_rear_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/up_front_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/up_front_sx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/up_front_sx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 - ros_topic_name: "rov_ricketts/up_front_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/up_front_dx_joint/cmd_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/up_front_dx_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
