@@ -81,6 +81,10 @@
       </link>
     </model>
 
+    <include>
+      <uri> ocean_floor2 </uri>
+    </include>
+
     <!-- <include>
       <uri> ocean_surface </uri>
     </include> -->

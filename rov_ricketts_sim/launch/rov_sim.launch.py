@@ -43,7 +43,7 @@ def generate_launch_description():
     default_world = os.path.join(
         sim_pkg_path,
         'worlds',
-        'empty_underwater.sdf'
+        'underwater.sdf'
         ) 
     world = LaunchConfiguration('world')
     # chose simulation world path 

@@ -95,7 +95,29 @@
           iyz="31.89417598"
           izz="4961.49762669" />
       </inertial> -->
-    </link>    
+    </link>  
+
+    <joint name="base_sonar_frame" type="fixed">
+      <origin rpy="0 0 0" xyz="1.54601 -0.004325 0.730815"/>
+      <parent link="base_link" />
+      <child link="sonar_frame" /> 
+    </joint>  
+    <link name="sonar_frame">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.00000001" />
+        <inertia
+          ixx="1e-12"
+          ixy="0"
+          ixz="0"
+          iyy="1e-12"
+          iyz="0"
+          izz="1e-12" />
+      </inertial>
+    </link>  
 <!-- 
     <joint name="base_sonar_joint" type="fixed">
       <origin rpy="0 0 0" 
