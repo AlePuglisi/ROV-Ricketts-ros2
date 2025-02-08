@@ -224,8 +224,8 @@ The Inertia matrix is normalized, so I had to multiply by mass/volume to bring i
 The **propellers** are assumed to be made of aluminum (commonly used underwater because of corrosion resistance). <br/> 
 For the **base**, modeled as a unique body, a constant density hypothesis was not possible. MBARI's website provides information about
 its mass value. However, because of the complex mesh shape and discontinuous density distribution,``trimesh`` computation gives an unreliable inertia value. <br/>
-For this reason, base inertia and CoM are computed using a simple box shape of uniform density.
-Also, the base ``<collision>`` is simplified to reduce simulation complexity. 
+For this reason, base inertia and CoM are computed using a simple box shape of uniform density.<br/>
+Furthermore, base ``<collision>`` is simplified to reduce simulation complexity, using the same box as the inertial one. 
   
 ## 1.4. Set up an empty underwater World in Gazebo Harmonic
 
