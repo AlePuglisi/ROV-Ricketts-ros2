@@ -2,8 +2,8 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="base_separated_macro">
-  <!-- This macro is used to define robot body as separated links. This can be useful if you want to set specific 
-       Inertial characteristics for each piece of the body -->
+  <!-- This macro is used to define robot body as SEPARATED LINKS. 
+       Useful if you want to set specific inertial characteristics for each piece of the body -->
 
     <joint name="world_base_joint" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0"/>

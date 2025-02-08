@@ -5,7 +5,7 @@
   <xacro:include filename="base_separated.xacro" />
   <xacro:include filename="thrusters.xacro" />
   <xacro:include filename="joint_states_publisher_plugin.xacro" />
-  
+
   <!-- Set of macros for simple geometrical inertia: box, cylinder, sphere -->
   <xacro:include filename="simple_inertial_macro.xacro" />
 
@@ -63,6 +63,7 @@
   </xacro:if>
 
   <!-- Load joint state publisher gazebo plugin -->
+  
   <xacro:joint_states_publisher_macro load_arm="load_arm" name="arm"/>
 
 

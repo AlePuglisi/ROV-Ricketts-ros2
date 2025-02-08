@@ -2,15 +2,17 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="base_macro" params="simple_inertia">
-  <!-- This macro is used to define robot body as unique links. This can be useful if you want to set a simple 
-        approxiametd Inertia for the overall body -->
+  <!-- This macro is used to define ROV body as UNIQUE LINK. 
+       Useful if you want to set a simple approxiametd Inertia for the overall body -->
 
     <link name="base_link">
+      <!-- simple box inertia -->
       <xacro:if value="$(arg simple_inertia)">
         <xacro:inertial_box mass="4700.0" x="3.3" y="1.80" z="1.80">
               <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
         </xacro:inertial_box>
       </xacro:if>
+      <!-- py script inertia from meshes, not accurate -->
       <xacro:unless value="$(arg simple_inertia)">
         <inertial>
           <origin
