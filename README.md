@@ -217,10 +217,10 @@ Inertial parameters of are fundamental for setting up Gazebo simulation (see the
  For a reliable simulation in Gazebo, we have to define the mass, inertia matrix, and center of mass position of each link. <br/>
  I have used [trimesh](https://trimesh.org/), a Python library to compute mesh properties such as volume, CoM position, and inertia. 
 
-- **T4 Manipulator**
+- **T4 Manipulator**: <br/>
 Using Titanium density, we can then use the mesh volume to compute each link's mass and CoM position.
 The Inertia matrix is normalized, so I had to multiply by mass/volume to bring it to the standard unit.
-- **ROV Body and Propellers**
+- **ROV Body and Propellers**: <br/>
 The **propellers** are assumed to be made of aluminum (commonly used underwater because of corrosion resistance). <br/> 
 For the **base**, modeled as a unique body, a constant density hypothesis was not possible. MBARI's website provides information about
 its mass value. However, because of the complex mesh shape and discontinuous density distribution,``trimesh`` computation gives an unreliable inertia value. <br/>
