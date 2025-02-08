@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="Rov_Ricketts" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- <xacro:include filename="base.xacro" /> -->
-  <xacro:include filename="base_inertia_new.xacro" />
+
+  <xacro:include filename="base.xacro" />
   <xacro:include filename="base_separated.xacro" />
   <xacro:include filename="thrusters.xacro" />
-  <xacro:include filename="joint_states_plugin.xacro" />
+  <xacro:include filename="joint_states_publisher_plugin.xacro" />
+  
+  <!-- Set of macros for simple geometrical inertia: box, cylinder, sphere -->
+  <xacro:include filename="simple_inertial_macro.xacro" />
 
-  <xacro:include filename="gazebo_physics.xacro" />
+  <!-- Load sensors: Sonar,... -->
   <xacro:include filename="sensors_plugins.xacro" />
+  <!-- Load physics: Buoyancy,... -->
+  <xacro:include filename="gazebo_physics.xacro" />
 
-  <!-- <xacro:include filename="thrusters_joint_states_plugin.xacro" />  -->
-
-  <!-- Use macro to define Base and Thrusters -->
+  <!-- Use macro to define Base -->
   <!-- Base -->
   <!-- <xacro:base_separated_macro/> -->
-  <xacro:base_macro/>
+  <xacro:arg name="simple_inertia" default="false" />
+  <xacro:if value="$(arg simple_inertia)">
+    <xacro:base_macro simple_inertia="true"/>
+  </xacro:if>
+  <xacro:unless value="$(arg simple_inertia)">
+    <xacro:base_macro simple_inertia="false"/>
+  </xacro:unless>
   
+  <!-- Use macro to define Thrusters: front_sx, front_dx, rear_dx, rear_sx, up_rear, up_front_sx, up_front_dx -->  
   <!-- Front Thrusters -->
   <xacro:thruster_macro name="front_sx">
              <origin xyz="-0.547848 0.4574 0.120838" rpy="${pi/4} ${pi/2} 0"/>
@@ -50,10 +60,10 @@
     <xacro:arm_macro name="arm">
               <origin xyz="${-0.291179+1.8143} ${0.967229-0.004215} ${-0.50857-0.1132-0.560595}" rpy="0 0 0" />
     </xacro:arm_macro>
-    <!-- <xacro:joint_state_macro name="arm"/> -->
   </xacro:if>
 
-  <xacro:all_joint_state_macro load_arm = "load_arm" name="arm"/>
+  <!-- Load joint state publisher gazebo plugin -->
+  <xacro:joint_states_publisher_macro load_arm="load_arm" name="arm"/>
 
 
 </robot>

@@ -58,7 +58,7 @@ propeller_mass = propeller_volume * propeller_density * 1000
 propeller_CoM = propeller_mesh.center_mass          # [m] (1x3)
 propeller_inertia_matrix = propeller_mesh.moment_inertia*propeller_mass/propeller_volume # (3x3) [Kg*m^2] 
 
-print(f"\Propeller Link: \n Volume= {propeller_volume}\nMass= {propeller_mass}\nCenter of Mass= {propeller_CoM}\nInertia Matrix Origin= {propeller_inertia_matrix}\n------------------------")
+print(f"\nPropeller Link: \n Volume= {propeller_volume}\nMass= {propeller_mass}\nCenter of Mass= {propeller_CoM}\nInertia Matrix Origin= {propeller_inertia_matrix}\n------------------------")
 
 # Compute BASE-FLOAT separated Inertia
 base_mesh_name = "body_no_float"
@@ -82,4 +82,4 @@ frame_CoM = frame_mesh.center_mass          # [m] (1x3)
 frame_inertia_matrix = frame_mesh.moment_inertia*frame_mass/frame_volume # (3x3) [Kg*m^2] 
 
 print(f"\nBase Link: \n Volume= {base_volume}\nMass= {base_mass}\nCenter of Mass= {base_CoM}\nInertia Matrix Origin= {base_inertia_matrix}\n------------------------")
-print(f"\Float Link: \n Volume= {frame_volume}\nMass= {frame_mass}\nCenter of Mass= {frame_CoM}\nInertia Matrix Origin= {frame_inertia_matrix}\n------------------------")
+print(f"\nFloat Link: \n Volume= {frame_volume}\nMass= {frame_mass}\nCenter of Mass= {frame_CoM}\nInertia Matrix Origin= {frame_inertia_matrix}\n------------------------")

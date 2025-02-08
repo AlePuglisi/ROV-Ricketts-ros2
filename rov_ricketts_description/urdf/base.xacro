@@ -1,170 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="base_macro">
+  <xacro:macro name="base_macro" params="simple_inertia">
   <!-- This macro is used to define robot body as unique links. This can be useful if you want to set a simple 
         approxiametd Inertia for the overall body -->
 
     <link name="base_link">
-
-      <inertial>
-        <origin
-          xyz="-1.81450712  0.00636514  0.5734822"
-          rpy="0 0 0" />
-        <mass
-          value="4700.0" />
-        <inertia
-          ixx="2779.72167757"
-          ixy="-142.69321245"
-          ixz="-59.10699454"
-          iyy="4409.88731132"
-          iyz="31.89417598"
-          izz="4961.49762669" />
-      </inertial>
-      <!-- <inertial>
-        <origin
-          xyz="-1.81450712  0.00636514  0.5734822"
-          rpy="0 0 0" />
-        <mass
-          value="0.1" />
-        <inertia
-          ixx="1E-2"
-          ixy="0"
-          ixz="0"
-          iyy="1E-2"
-          iyz="0"
-          izz="1E-2" />
-      </inertial> -->
-      
+      <xacro:if value="$(arg simple_inertia)">
+        <xacro:inertial_box mass="4700.0" x="3.3" y="1.80" z="1.80">
+              <origin xyz="0.0 0.0 -0.5" rpy="0 0 0"/>
+        </xacro:inertial_box>
+      </xacro:if>
+      <xacro:unless value="$(arg simple_inertia)">
+        <inertial>
+          <origin
+            xyz="0.0 0.0 -0.5"
+            rpy="0 0 0" />
+          <mass
+            value="4700.0" />
+          <inertia
+            ixx="2779.72167757"
+            ixy="-142.69321245"
+            ixz="-59.10699454"
+            iyy="4409.88731132"
+            iyz="31.89417598"
+            izz="4961.49762669" />
+        </inertial>
+      </xacro:unless>
+      <!-- float frame + side logo panel -->
       <visual>
         <origin
-          xyz="0 0 0"
+          xyz="1.8143 -0.004215 -0.560595"
           rpy="0 0 0" />
         <geometry>
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/floatLogo.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/floatLogo.dae" scale="1.0 1.0 1.0"/>
-        </geometry>
-      </collision>
-
-      <!-- <visual>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
-        </geometry>
-        <material name="logo">
-          <texture filename="file://$(find rov_ricketts_description)/textures/logo.png"/>
-        </material>
-      </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/decal.dae" scale="1.0 1.0 1.0"/>
-        </geometry>
-      </collision> -->
-
+      <!-- alluminium structure frame -->
       <visual>
         <origin
-          xyz="0 0 0"
+          xyz="1.8143 -0.004215 -0.560595"
           rpy="0 0 0" />
         <geometry>
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/frame.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/frame.dae" scale="1.0 1.0 1.0"/>
-        </geometry>
-      </collision>
-
+      <!-- all 7 thrusters' case frames -->
       <visual>
         <origin
-          xyz="0 0 0"
+          xyz="1.8143 -0.004215 -0.560595"
           rpy="0 0 0" />
         <geometry>
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/thrusters.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/thrusters.dae" scale="1.0 1.0 1.0"/>
-        </geometry>
-      </collision>
-
+      <!-- internal equipment frame -->
       <visual>
         <origin
-          xyz="0 0 0"
+          xyz="1.8143 -0.004215 -0.560595"
           rpy="0 0 0" />
         <geometry>
           <mesh
             filename="file://$(find rov_ricketts_description)/meshes/equipment.dae" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
+
+      <!-- simple box collision model -->
       <collision>
         <origin
-          xyz="0 0 0"
+          xyz="0 0 -0.3"
           rpy="0 0 0" />
         <geometry>
-          <mesh
-            filename="file://$(find rov_ricketts_description)/meshes/equipment.dae" scale="1.0 1.0 1.0"/>
+             <box size="3.5 1.90 2.0"/>
         </geometry>
       </collision>
     
     </link>
 
+    <!-- dummy link -->
     <joint name="base_link_frame" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="1.8143 -0.004215 -0.560595"/>
       <parent link="base_link" />
       <child link="base_frame" /> 
     </joint>
 
     <link name="base_frame">
-      <!-- <inertial>
+    </link>  
+
+    <joint name="base_sonar_frame" type="fixed">
+      <origin rpy="0 0 0" xyz="1.54601 -0.004325 0.730815"/>
+      <parent link="base_link" />
+      <child link="sonar_frame" /> 
+    </joint>  
+    <link name="sonar_frame">
+    <!-- dummy inertial values for gazebo-->
+      <inertial>
         <origin
-          xyz="-1.81450712  0.00636514  0.5734822"
+          xyz="0 0 0"
           rpy="0 0 0" />
         <mass
-          value="4700.0" />
+          value="0.00000001" />
         <inertia
-          ixx="2779.72167757"
-          ixy="-142.69321245"
-          ixz="-59.10699454"
-          iyy="4409.88731132"
-          iyz="31.89417598"
-          izz="4961.49762669" />
-      </inertial> -->
-    </link>    
-<!-- 
-    <joint name="base_sonar_joint" type="fixed">
-      <origin rpy="0 0 0" 
-              xyz="-0.26829 -0.00011 1.29141"/>
-      <parent link="base_link" />
-      <child link="sonar_link" /> 
-    </joint> -->
-
+          ixx="1e-12"
+          ixy="0"
+          ixz="0"
+          iyy="1e-12"
+          iyz="0"
+          izz="1e-12" />
+      </inertial>
+    </link>  
   </xacro:macro>
 </robot>

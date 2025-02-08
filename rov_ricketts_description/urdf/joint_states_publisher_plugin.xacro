@@ -1,18 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-
-    <xacro:arg name="load_arm" default="false" />
-
-        <xacro:macro name="all_joint_state_macro" params="load_arm name">
-            <!-- Gazebo plugin for joint state publisher  -->
-        
-            <gazebo>
-                <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
+    <xacro:macro name="joint_states_publisher_macro" params="load_arm name">
+        <!-- Gazebo plugin for joint state publisher  -->
+    
+        <gazebo>
+            <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
                 <!-- <update_rate>500</update_rate> -->
                 <topic>/joint_states</topic>
                 
                 <!-- <joint_name>base_float_joint</joint_name> -->
- 
+    
                 <joint_name>front_sx_thruster</joint_name>
                 <joint_name>front_dx_thruster</joint_name>
                 <joint_name>rear_dx_thruster</joint_name>
@@ -31,8 +28,8 @@
                     <joint_name>${name}_link5_claw_right</joint_name>
                     <joint_name>${name}_link5_claw_left</joint_name>
                 </xacro:if>
-                </plugin>
-            </gazebo>
-        </xacro:macro>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
 
 </robot>
