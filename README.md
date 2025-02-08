@@ -163,14 +163,15 @@ The arm is defined as a single piece in the 3D model, three options are possible
 I found the information about the robotic arm on [this interesting video](https://www.youtube.com/watch?v=BTdeXxaGfAs&t=303s&ab_channel=MBARI%28MontereyBayAquariumResearchInstitute%29) about ROV technologies at MBARI.<br/>
 Thank you very much, Benjamin Erwin :pray:. <br/>
 ROV Doc Ricketts is equipped with two robotic arms: 
-- **Shilling TITAN 4 Manipulaotr** (T4): Strong arm, for heavy work but less precise.
-- Aluminum Arm: very dexterous, for precise manipulation. 
+- **Shilling TITAN 4 Manipulaotr** (T4): Strong Titanium arm, for heavy work but less precise.
+- **Kraft TeleRobotics PREDATOR Manipulator**: Aluminum Arm, very dexterous, for precise manipulation. 
+The combination of the two ensures a trade-off between precision and power. 
 
 I only modeled the [T4 manipulator](https://www.technipfmc.com/media/hpkjrigr/titan-4-datasheet.pdf),  available in the 3D Model. <br/>
  (In the URDF, I include the **arm_tool** frame, because this will help when performing manipulation tasks.)
 
 > [!TIP]
-> A useful tag to define gripper joints is "mimic": <br/>
+> A useful tag to define **gripper joints** is "mimic": <br/>
 >
 >     <joint name="${name}_link4_claw_left" type="revolute">
 >     <mimic joint="${name}_link4_claw_right" multiplier="1" offset="0"/>
@@ -178,10 +179,15 @@ I only modeled the [T4 manipulator](https://www.technipfmc.com/media/hpkjrigr/ti
 > 
 > This forces this joint to move around its rotation axis as the mimic joint times the multiplier.<br/>
 > (joint_state = mimic_joint_state * multiplier) <br/>
-> Changing the multiplier value we can set an inverse rotation or a transformation ratio. 
+> Changing the multiplier value we can set an inverse rotation or a transformation ratio.
 
-Once Doc Ricketts Arm URDF has been derived, to make the robot reconfigurable at launch time, we can decide at launch time if we want to load it or not. <br/>
-To achieve this flexibility feature, we can use a launch argument, and the xacro conditional statement. <br/>
+> [!NOTE]
+> The default gazebo physics solver skip mimic joint constraints.
+> This is not a real issue, the gripper commands will be handled using
+> a ros2_control ``position_controllers/GripperActionController``
+
+
+Once Doc Ricketts Arm URDF has been defined, to load T4 arm, we can use a launch argument and the xacro conditional statement. <br/>
 
 - To configure Ricketts **with the Robotic Arm**: 
 ```
@@ -200,20 +206,27 @@ Brief **Joint actuation Demo**:mechanical_arm::
 
 <image src=https://github.com/user-attachments/assets/5c3c9c66-c7f4-4276-957b-2d1cf4b8ae2d>
 
-Joint limits and dynamic joints/body properties will be defined in the next steps...
+Joint limits and dynamic joints/body properties (Inertia, Center of mass, etc..) will be defined in the next steps...
 
 ## 1.3. Tune Model Inertia parameters
-Inertia parameters are fundamental for setting up Gazebo simulation. <br/>
-
-- **TITAN 4** MANIPULATOR: 
-From the manipulator's datasheet, it is possible to extract accurate information about its characteristics.<br/>
-Some of them will be useful to set torque limitations and other control-related aspects, for now, let's focus on inertial properties. <br/>
+Inertial parameters of are fundamental for setting up Gazebo simulation (see the official documentation [tutorial](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/Adding-Physical-and-Collision-Properties-to-a-URDF-Model.html)). <br/>
+   - ``<origin>``: position of the CoM, with respect to link frame [m]
+   - ``<mass>``: link mass [kg]
+   - ``<inertia>``: 3x3 inertia tensor [kg*m^2]
 
  For a reliable simulation in Gazebo, we have to define the mass, inertia matrix, and center of mass position of each link. <br/>
- To extract these numbers, we can use the information about the **arm material** which is primarily Titanium (as the name suggests). <br/>
- Using Titanium density we can then use the mesh volume to compute mass and some software resources to compute CoM position and Inertia matrix automatically.  
+ I have used [trimesh](https://trimesh.org/), a Python library to compute mesh properties such as volume, CoM position, and inertia. 
 
-
+- **T4 Manipulator**
+Using Titanium density, we can then use the mesh volume to compute each link's mass and CoM position.
+The Inertia matrix is normalized, so I had to multiply by mass/volume to bring it to the standard unit.
+- **ROV Body and Propellers**
+The **propellers** are assumed to be made of aluminum (commonly used underwater because of corrosion resistance). <br/> 
+For the **base**, modeled as a unique body, a constant density hypothesis was not possible. MBARI's website provides information about
+its mass value. However, because of the complex mesh shape and discontinuous density distribution,``trimesh`` computation gives an unreliable inertia value. <br/>
+For this reason, base inertia and CoM are computed using a simple box shape of uniform density.
+Also, the base ``<collision>`` is simplified to reduce simulation complexity. 
+  
 ## 1.4. Set up an empty underwater World in Gazebo Harmonic
 
 ## 1.5. Add and Tune Buoyancy, fluid dynamic, and thruster Gazebo sim plugins
