@@ -13,18 +13,18 @@ git clone https://github.com/AlePuglisi/ROV-Ricketts-ros2.git
 
 ### Terminal Commands to launch visualization/simulation/control
 - Visualize Ricketts **with the Robotic Arm** in Rviz: 
-```
-# Terminal
-ros2 launch rov_ricketts_description display.launch.py load_arm:=true
-```
+  ```
+  # Terminal
+  ros2 launch rov_ricketts_description display.launch.py load_arm:=true
+  ```
 - Visualize Ricketts **without the Robotic Arm** in Rviz: 
-```
-# Terminal
-ros2 launch rov_ricketts_description display.launch.py load_arm:=false
-```
-Or simply (being false the default configuration): 
-```
-# Terminal
-ros2 launch rov_ricketts_description display.launch.py 
-```
+  ```
+  # Terminal
+  ros2 launch rov_ricketts_description display.launch.py load_arm:=false
+  ```
+  Or simply (being the default configuration set to ``false``): 
+  ```
+  # Terminal
+  ros2 launch rov_ricketts_description display.launch.py 
+  ```
 
