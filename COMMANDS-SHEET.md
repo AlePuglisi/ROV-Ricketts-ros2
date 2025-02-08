@@ -7,24 +7,20 @@ Underwater World Simulation | ROV | ROS2 Jazzy | Gazebo Harmonic |
 ### Clone this repository and build 
 Move to your ros workspace, inside /src folder (where all your packages are located) 
 ```
-# Terminal
 git clone https://github.com/AlePuglisi/ROV-Ricketts-ros2.git
 ```
 
 ### Terminal Commands to launch visualization/simulation/control
 - Visualize Ricketts **with the Robotic Arm** in Rviz: 
   ```
-  # Terminal
   ros2 launch rov_ricketts_description display.launch.py load_arm:=true
   ```
 - Visualize Ricketts **without the Robotic Arm** in Rviz: 
   ```
-  # Terminal
   ros2 launch rov_ricketts_description display.launch.py load_arm:=false
   ```
   Or simply (being the default configuration set to ``false``): 
   ```
-  # Terminal
   ros2 launch rov_ricketts_description display.launch.py 
   ```
 
