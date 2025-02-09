@@ -1,6 +1,6 @@
 # Blender 4.3.2
 # www.blender.org
-mtllib ocean_floor2.mtl
+mtllib ocean_floor_simple.mtl
 o Landscape
 v -10.000000 0.000000 10.000000
 v -10.000000 0.000000 9.842520

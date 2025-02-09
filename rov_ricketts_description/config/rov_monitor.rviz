@@ -73,32 +73,32 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_dx:
+        front_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        front_sx:
+        front_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_dx:
+        rear_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_sx:
+        rear_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        up_front_dx:
+        up_front_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        up_front_sx:
+        up_front_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -127,17 +127,17 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
-        front_dx:
+        front_right:
           Value: true
-        front_sx:
+        front_left:
           Value: true
-        rear_dx:
+        rear_right:
           Value: true
-        rear_sx:
+        rear_left:
           Value: true
-        up_front_dx:
+        up_front_right:
           Value: true
-        up_front_sx:
+        up_front_left:
           Value: true
         up_rear:
           Value: true
@@ -151,17 +151,17 @@ Visualization Manager:
       Tree:
         world:
           base_link:
-            front_dx:
+            front_right:
               {}
-            front_sx:
+            front_left:
               {}
-            rear_dx:
+            rear_right:
               {}
-            rear_sx:
+            rear_left:
               {}
-            up_front_dx:
+            up_front_right:
               {}
-            up_front_sx:
+            up_front_left:
               {}
             up_rear:
               {}

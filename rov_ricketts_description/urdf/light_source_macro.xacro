@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <!-- These add ligth source to parent link at origin location -->
+    <xacro:macro name="ligth_macro" params="name parent origin">
+        <gazebo reference="${parent}">
+            <light name="${name}" type="spot">
+                <pose>${origin}</pose> <!-- Position the light slightly above base_link -->
+                <attenuation>
+                        <range>25</range>
+                        <linear>0.1</linear>
+                        <constant>0.5</constant>
+                        <quadratic>0.02</quadratic>
+                </attenuation>
+                <diffuse>1.0 1.0 0.8 1</diffuse>
+                <specular>0.5 0.5 0.5 1</specular>
+                <spot>
+                    <inner_angle>1</inner_angle>
+                    <outer_angle>1</outer_angle>
+                    <falloff>1.0</falloff>
+                </spot>
+                <direction>1 0 0</direction>
+                <cast_shadows>true</cast_shadows>
+                <visualize>true</visualize>
+            </light>
+        </gazebo>
+    </xacro:macro>  
+</robot>

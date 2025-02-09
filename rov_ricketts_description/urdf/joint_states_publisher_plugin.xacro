@@ -10,13 +10,13 @@
                 
                 <!-- <joint_name>base_float_joint</joint_name> -->
     
-                <joint_name>front_sx_thruster</joint_name>
-                <joint_name>front_dx_thruster</joint_name>
-                <joint_name>rear_dx_thruster</joint_name>
-                <joint_name>rear_sx_thruster</joint_name>
+                <joint_name>front_left_thruster</joint_name>
+                <joint_name>front_right_thruster</joint_name>
+                <joint_name>rear_right_thruster</joint_name>
+                <joint_name>rear_left_thruster</joint_name>
                 <joint_name>up_rear_thruster</joint_name>
-                <joint_name>up_front_sx_thruster</joint_name>
-                <joint_name>up_front_dx_thruster</joint_name>
+                <joint_name>up_front_left_thruster</joint_name>
+                <joint_name>up_front_right_thruster</joint_name>
 
                 <xacro:if value="$(arg load_arm)">
                     <joint_name>${name}_base_joint</joint_name>

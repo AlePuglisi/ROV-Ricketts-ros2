@@ -26,26 +26,26 @@
   direction: GZ_TO_ROS
 
 # map ros to gz topic for thusters
-- ros_topic_name: "rov_ricketts/front_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/front_sx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/front_left_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/front_left_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "rov_ricketts/front_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/front_dx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/front_right_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/front_right_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "rov_ricketts/rear_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/rear_sx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/rear_left_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/rear_left_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "rov_ricketts/rear_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/rear_dx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/rear_right_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/rear_right_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
@@ -56,14 +56,14 @@
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "rov_ricketts/up_front_sx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/up_front_sx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/up_front_left_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/up_front_left_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "rov_ricketts/up_front_dx_thrust"
-  gz_topic_name: "/model/rov_ricketts/joint/up_front_dx_thruster/cmd_thrust"
+- ros_topic_name: "rov_ricketts/up_front_right_thrust"
+  gz_topic_name: "/model/rov_ricketts/joint/up_front_right_thruster/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ

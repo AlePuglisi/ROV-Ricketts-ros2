@@ -16,7 +16,8 @@
       <background>0.01 0.07 0.20 1.0</background>
       <grid>false</grid>
     </scene>
-    
+
+    <!-- IMU Sensor Plugin-->   
     <plugin
       filename="gz-sim-imu-system"
       name="gz::sim::systems::Imu">
@@ -43,12 +44,14 @@
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
     
+    <!-- Buoyancy Plugin-->   
     <plugin
       filename="gz-sim-buoyancy-system"
       name="gz::sim::systems::Buoyancy">
       <uniform_fluid_density>1000</uniform_fluid_density>
     </plugin>
 
+    <!-- Light -->   
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 1000 0 0 0</pose>
@@ -81,8 +84,9 @@
       </link>
     </model>
 
+    <!-- Simple ocean floor model -->
     <include>
-      <uri> ocean_floor2 </uri>
+      <uri> ocean_floor_simple </uri>
     </include>
 
     <!-- <include>
