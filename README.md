@@ -6,9 +6,12 @@ Underwater World Simulation | ROV | ROS2 Jazzy | Gazebo Harmonic |
 
 I started this project because of my interest in underwater robotics and fascination with the [MBARI](https://www.mbari.org/) Oceanographic Institute. <br/>
 
+> [!IMPORTANT]
+> To visualize the documentation of the commands only, look at this [commands sheet readme](https://github.com/AlePuglisi/ROV-Ricketts-ros2/blob/main/COMMANDS-SHEET.md). 
+
 During this project, I want to learn how to set up an underwater world simulation with ROS2 and Gazebo. <br/>
 Gazebo Classic has reached its end of life, and it is time to learn how to use Gazebo sim. <br/>
-Due to some limitations of Gazebo, soon, I want to explore other robotics simulators, like [NVIDIA Omniverse IsaacSim](https://docs.omniverse.nvidia.com/isaacsim/latest/index.html). 
+Due to some rendering and world dimension limitations of Gazebo, soon, I want to explore other robotics simulators, like [NVIDIA Omniverse IsaacSim](https://docs.omniverse.nvidia.com/isaacsim/latest/index.html). 
 
 ### Final (long-term) Objective
 Thanks to the huge amount of available models of ROV, Environments, and Creatures gifted by MBARI on [sketchfab](https://sketchfab.com/search?q=mbari&type=models), I want to: 
