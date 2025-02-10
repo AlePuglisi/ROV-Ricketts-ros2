@@ -7,19 +7,19 @@
             <light name="${name}" type="spot">
                 <pose>${origin}</pose> <!-- Position the light slightly above base_link -->
                 <attenuation>
-                        <range>25</range>
-                        <linear>0.1</linear>
-                        <constant>0.5</constant>
-                        <quadratic>0.02</quadratic>
+                    <range>25</range>
+                    <linear>0</linear>
+                    <constant>0.1</constant>
+                    <quadratic>0.005</quadratic>
                 </attenuation>
-                <diffuse>1.0 1.0 0.8 1</diffuse>
-                <specular>0.5 0.5 0.5 1</specular>
+                <diffuse>0.5 0.5 0.8 1</diffuse>
+                <specular>0.8 0.8 0.5 1</specular>
                 <spot>
                     <inner_angle>1</inner_angle>
-                    <outer_angle>1</outer_angle>
-                    <falloff>1.0</falloff>
+                    <outer_angle>1.1</outer_angle>
+                    <falloff>1</falloff>
                 </spot>
-                <direction>1 0 0</direction>
+                <direction>0 0 -1</direction>
                 <cast_shadows>true</cast_shadows>
                 <visualize>true</visualize>
             </light>

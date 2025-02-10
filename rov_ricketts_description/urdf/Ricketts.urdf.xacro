@@ -26,10 +26,10 @@
     <xacro:base_macro simple_inertia="false"/>
   </xacro:unless>
   
-  <xacro:ligth_macro name="rigth_up" parent="base_link" origin="1.88 -0.628776 0.223158 0 -1.57 0"/>
-  <xacro:ligth_macro name="rigth_down" parent="base_link" origin="1.9 -0.757185 -0.048437 0 -1.57 0"/>
-  <xacro:ligth_macro name="left_up" parent="base_link" origin="1.9 0.62132 0.224733 0 -1.57 0"/>
-  <xacro:ligth_macro name="left_down" parent="base_link" origin="1.98 0.750751 0.00541 0 -1.57 0"/>
+  <xacro:ligth_macro name="rigth_up" parent="base_link" origin="1.85 -0.628776 0.223158 0 -1.57 0"/>
+  <xacro:ligth_macro name="rigth_down" parent="base_link" origin="1.87 -0.757185 -0.048437 0 -1.57 0"/>
+  <xacro:ligth_macro name="left_up" parent="base_link" origin="1.87 0.62132 0.224733 0 -1.57 0"/>
+  <xacro:ligth_macro name="left_down" parent="base_link" origin="1.95 0.750751 0.00541 0 -1.57 0"/>
 
 
   <!-- Use macro to define Thrusters: front_left, front_right, rear_right, rear_left, up_rear, up_front_left, up_front_right -->  
