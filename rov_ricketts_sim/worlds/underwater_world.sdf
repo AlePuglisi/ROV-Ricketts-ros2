@@ -98,9 +98,9 @@
       <pose> 0.0 0.0 -10.0 1.57 0.0 0.0 </pose>
     </include> -->
 
-    <include>
+    <!-- <include>
       <uri> coral_group </uri>
-    </include>
+    </include> -->
 
     
   </world>
