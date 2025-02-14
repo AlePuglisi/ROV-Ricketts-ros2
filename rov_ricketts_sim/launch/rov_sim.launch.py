@@ -43,7 +43,7 @@ def generate_launch_description():
     default_world = os.path.join(
         sim_pkg_path,
         'worlds',
-        'underwater.sdf'
+        'underwater_world.sdf'
         ) 
     world = LaunchConfiguration('world')
     # chose simulation world path 
@@ -103,7 +103,7 @@ def generate_launch_description():
                                    '-x', '-7.0',
                                    '-y', '10.0',
                                    '-z', '-0.8',
-                                   '-Y','3.14'],
+                                   '-Y', '-0.0'],#'3.14'],
                         output='screen')
     
     # Create ROS-GZ bridge from config file

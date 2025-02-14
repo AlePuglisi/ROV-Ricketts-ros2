@@ -21,7 +21,7 @@
                 </spot>
                 <direction>0 0 -1</direction>
                 <cast_shadows>true</cast_shadows>
-                <visualize>true</visualize>
+                <visualize>false</visualize>
             </light>
         </gazebo>
     </xacro:macro>  
