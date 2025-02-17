@@ -261,7 +261,14 @@ To spawn directly the robot in the underwater canyon, load it in **underwater_wo
 ros2 launch rov_ricketts_sim rov_sim.launch.py world:=~/ros2_ws/src/ROV-Ricketts-ros2/rov_ricketts_sim/worlds/underwater_world.sdf 
 ```
 
+<img width=450 heigth=300 src=https://github.com/user-attachments/assets/89e07d87-b08a-4938-88d9-c57e42595556>
+
+
+
 ## 1.6. Move ROV Ricketts in the Gazebo World
+
+<image src=https://github.com/user-attachments/assets/486b6e25-7a56-475c-be38-c76f2db68b91>
+
 
 
 
