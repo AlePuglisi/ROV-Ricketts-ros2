@@ -267,8 +267,10 @@ ros2 launch rov_ricketts_sim rov_sim.launch.py world:=~/ros2_ws/src/ROV-Ricketts
 
 ## 1.6. Move ROV Ricketts in the Gazebo World
 
-<image src=https://github.com/user-attachments/assets/486b6e25-7a56-475c-be38-c76f2db68b91>
+I'm not yet a good ROV pilot!
+Adjustments on plugin parameters and a GUI or joypad teleoperation will be implemented to make Ricketts easy to operate.
 
+<image src=https://github.com/user-attachments/assets/d2cdf1e2-7910-4672-8660-4bd7bc90544e>
 
 
 
