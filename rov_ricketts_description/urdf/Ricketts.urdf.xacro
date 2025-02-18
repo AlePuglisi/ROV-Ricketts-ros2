@@ -18,7 +18,7 @@
   <!-- Use macro to define Base -->
   <!-- Base -->
   <!-- <xacro:base_separated_macro/> -->
-  <xacro:arg name="simple_inertia" default="false" />
+  <xacro:arg name="simple_inertia" default="true" />
   <xacro:if value="$(arg simple_inertia)">
     <xacro:base_macro simple_inertia="true"/>
   </xacro:if>

@@ -102,7 +102,7 @@ def generate_launch_description():
                                    '-name', 'rov_ricketts', 
                                    '-x', '-7.0',
                                    '-y', '10.0',
-                                   '-z', '-0.8',
+                                   '-z', '0.8',
                                    '-Y', '-0.0'],#'3.14'],
                         output='screen')
     

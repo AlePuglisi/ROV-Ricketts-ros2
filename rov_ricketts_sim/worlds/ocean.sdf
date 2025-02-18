@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.9">
-  <world name="empty_underwater">
+  <world name="ocean">
     
     <gravity>0 0 9.81</gravity>
 
@@ -83,6 +83,11 @@
 
     <include>
       <uri> ocean_surface </uri>
+    </include>
+
+    <include>
+      <uri> ocean_canyon </uri>
+      <pose> 0 0 -50 1.57 0 0</pose>
     </include>
     
   </world>
