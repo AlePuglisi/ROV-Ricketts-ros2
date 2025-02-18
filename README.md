@@ -229,12 +229,48 @@ For the **base**, modeled as a unique body, a constant density hypothesis was no
 its mass value. However, because of the complex mesh shape and discontinuous density distribution,``trimesh`` computation gives an unreliable inertia value. <br/>
 For this reason, base inertia and CoM are computed using a simple box shape of uniform density.<br/>
 Furthermore, base ``<collision>`` is simplified to reduce simulation complexity, using the same box as the inertial one. 
-  
-## 1.4. Set up an empty underwater World in Gazebo Harmonic
+<img width=300 heigth=200 src=https://github.com/user-attachments/assets/ad94bc53-9f3f-4a74-b00f-8a6e879ca8b9>
+<img width=300 heigth=200 src=https://github.com/user-attachments/assets/9aa45b22-cd74-4720-b734-c7d4c19a2181>
+<img width=300 heigth=200 src=https://github.com/user-attachments/assets/05cc1fa0-e875-42f7-9da0-2c02a59ecda1>
 
-## 1.5. Add and Tune Buoyancy, fluid dynamic, and thruster Gazebo sim plugins
 
-## 1.6. Move ROV Ricketts in an Empty Gazebo World
+
+## 1.4. Add and Tune Buoyancy, fluid dynamic, thruster actuators, and ligths Gazebo sim plugins
+
+## 1.5. Set up an underwater World in Gazebo Harmonic
+<img width=470 heigth=400 src=https://github.com/user-attachments/assets/0bf0a30f-8224-4e0a-95b1-83ac638adb4e>
+<img width=470 heigth=400 src=https://github.com/user-attachments/assets/031b6c89-4a83-423f-9603-b400da519277>
+
+```
+# Terminal
+ros2 launch rov_ricketts_sim rov_sim.launch.py 
+```
+
+### To select the world sdf:
+
+It is possible to use the "world:=" launch argument
+The first figure on the left comes from **ocean.sdf** load also the ocean surface:
+```
+# Terminal
+ros2 launch rov_ricketts_sim rov_sim.launch.py world:=~/ros2_ws/src/ROV-Ricketts-ros2/rov_ricketts_sim/worlds/ocean.sdf 
+```
+
+To spawn directly the robot in the underwater canyon, load it in **underwater_world.sdf** world:
+```
+# Terminal
+ros2 launch rov_ricketts_sim rov_sim.launch.py world:=~/ros2_ws/src/ROV-Ricketts-ros2/rov_ricketts_sim/worlds/underwater_world.sdf 
+```
+
+<img width=450 heigth=300 src=https://github.com/user-attachments/assets/89e07d87-b08a-4938-88d9-c57e42595556>
+
+
+
+## 1.6. Move ROV Ricketts in the Gazebo World
+
+I'm not yet a good ROV pilot!
+Adjustments on plugin parameters and a GUI or joypad teleoperation will be implemented to make Ricketts easy to operate.
+
+<image src=https://github.com/user-attachments/assets/d2cdf1e2-7910-4672-8660-4bd7bc90544e>
 
 
 
