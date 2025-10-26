@@ -2,8 +2,9 @@
 **Unofficial MBARI's ROV Simulation and Control Project** <br/>
 Underwater World Simulation | ROV | ROS2 Jazzy | Gazebo Harmonic | 
 
-<image width=450 heigth=300 src=https://github.com/user-attachments/assets/5a26e743-ca25-4e6b-828f-766e30c5d696>
-
+<image width=420 heigth=280 src=https://github.com/user-attachments/assets/5a26e743-ca25-4e6b-828f-766e30c5d696>
+<img width=420 heigth=280 src=https://github.com/user-attachments/assets/89e07d87-b08a-4938-88d9-c57e42595556>
+   
 I started this project because of my interest in underwater robotics and fascination with the [MBARI](https://www.mbari.org/) Oceanographic Institute. <br/>
 
 > [!IMPORTANT]
